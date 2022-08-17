@@ -14,7 +14,7 @@ from .forms import ContactUsForm
 import qrcode
 from PIL import Image
 from django.conf import settings
-from qr_gen_project import  MEDIA_ROOT
+from qr_gen_project.settings import  MEDIA_ROOT
 import datetime
 from django.contrib.auth.decorators import login_required
 

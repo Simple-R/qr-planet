@@ -2,7 +2,7 @@ from rest_framework.authentication import get_authorization_header, BaseAuthenti
 from rest_framework import exceptions
 import jwt
 from django.conf import settings
-from accounts.models import QRUser
+from .models import QRUser
 
 
 

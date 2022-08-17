@@ -1,7 +1,7 @@
 from unicodedata import category
 from django.shortcuts import render
 from rest_framework.generics import GenericAPIView
-from qr_gen_project.accounts import LoginSerializer, RegisterSerializer
+from accounts.serializers import LoginSerializer, RegisterSerializer
 from rest_framework import response, status, permissions
 from django.contrib.auth import authenticate
 from qr_generator.models import QRCollection
