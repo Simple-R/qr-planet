@@ -1,0 +1,19 @@
+{% extends 'qr_generator/index.html'%}
+{% load static %}
+
+
+{% block title %}Error{% endblock title %}
+
+{% block content%}
+    <section class="middle-section">
+        <div class="error">
+          <img src="{% static 'base/images/error.svg' %}" alt="" />
+          <h1>Oops! Something went wrong.</h1>
+        </div>
+      </section>
+
+{% endblock content%}
+
+     
+{% block middle_footer %}{% endblock middle_footer %}
+     

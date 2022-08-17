@@ -1,0 +1,67 @@
+{% extends 'drf-yasg/swagger-ui.html'%}
+{% load static %}
+
+
+{% block extra_head %}
+    
+    <meta name="keywords" content="qr code generator" />
+    <meta
+      name="description"
+      content="The Easiest Way to generate, download &amp; share QR Codes
+        Online with QR Planet Code Generator within few minutes. Get started today."
+    />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta
+      itemprop="description"
+      content="Quickly Generate, Download and Share QR Codes!"
+    />
+{% endblock %}
+
+{% block favicon %}
+    <link rel="icon" type="image/png" href="{% static 'base/favicon_io/favicon-32x32.png' %}"/>
+{% endblock %}
+
+    {% block main_styles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'drf-yasg/style.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'drf-yasg/swagger-ui-dist/swagger-ui.css' %}">
+    {% endblock %}
+
+</head>
+
+<body class="swagger-body">
+
+{% block footer %}
+    {% include 'drf-yasg/bottom_footer.html'%}
+{% endblock %}
+
+
+{% block session_auth_button %}
+            {% csrf_token %}
+
+            {% block user_context_message %}
+                {% if request.user.is_authenticated %}
+                    <div class="hello">
+                        <span class="django-session">QR&nbsp;Planet</span> <span
+                            class="label label-primary">{{ request.user }}</span>
+                    </div>
+                {% endif %}
+            {% endblock %}
+
+            {% if request.user.is_authenticated %}
+                <div class='btn authorize'>
+                    <a id="auth" class="header__btn" href="{{ LOGOUT_URL }}?next={{ request.path }}" data-sw-translate>
+                        {% block django_logout_message %}
+                            QR&nbsp;Planet
+                        {% endblock %}
+                    </a>
+                </div>
+            {% else %}
+                <div class='btn authorize'>
+                    <a id="auth" class="header__btn" href="{{ LOGIN_URL }}?next={{ request.path }}" data-sw-translate>
+                        {% block django_login_message %}
+                            QR&nbsp;Planet Login
+                        {% endblock %}
+                    </a>
+                </div>
+            {% endif %}
+        {% endblock %}

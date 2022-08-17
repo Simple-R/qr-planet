@@ -1,0 +1,21 @@
+{% extends 'qr_generator/index.html'%}
+{% load static %}
+
+{% block style%}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'base/css/coming_soon.css'%}">
+{% endblock style%}
+
+{% block title %} {{ block.super }}&nbsp;&#124;&nbsp;Coming&nbsp;Soon&nbsp;{% endblock title %}
+
+{% block content%}
+<div class="container">
+    <div class="text">
+      <h1>Coming Soon...</h1>
+      <p>We are working on making more features available.</p>
+</div>
+{% endblock content%}
+
+{% block top_footer %}{% endblock top_footer %}
+{% block middle_footer %}{% endblock middle_footer %}
+{% block bottom_footer %}{% endblock bottom_footer %}

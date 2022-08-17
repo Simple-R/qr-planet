@@ -9,10 +9,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gf2-#$4wr%(r!2h$=kmb@l&15@h)y+r!_*=e^=0seotwrj$=0r'
+SECRET_KEY = os.getenv('QR_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = ['*']
 
@@ -23,11 +23,21 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    "whitenoise.runserver_nostatic",
     'django.contrib.sessions',
     'django.contrib.messages',
+    "whitenoise.runserver_nostatic",
     'django.contrib.staticfiles',
+    'accounts',
+
+    # Our own Apps
+    'qr_generator.apps.QrGeneratorConfig',
+    # 'api',
+    'rest_framework',
+    'corsheaders',
+    'drf_yasg',
+    'django_social_share'
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -96,12 +106,21 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Lagos'
 
 USE_I18N = True
 
 USE_TZ = True
 
+
+
+# Email Configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL')
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+QR_EMAIL_HOST_USER = os.getenv('QR_EMAIL_HOST_USER')
+QR_EMAIL_HOST_PASSWORD = os.getenv('QR_EMAIL_HOST_PASSWORD')
+EMAIL_PORT = '465'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -113,8 +132,40 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# Thousand Separator
+USE_THOUSAND_SEPARATOR = True
+THOUSAND_SEPARATOR = ', '
+DECIMAL_SEPARATOR = '.'
+NUMBER_GROUPING = 3
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# API config
+CORS_ORIGIN_ALLOW_ALL = True # for now, will be changed later
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8000', 'http://QR-gen.eba-n3fpcnmc.us-west-2.elasticbeanstalk.com*'
+)
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'accounts.jwt.JWTAuthentication',
+    ]
+}
+
+
+
+# app specifics
+LOGOUT_REDIRECT_URL = '/qr-gen/'
+
+AUTH_USER_MODEL='accounts.QRUser'
+
+
+# Heroku setup
+import django_on_heroku
+django_on_heroku.settings(locals())

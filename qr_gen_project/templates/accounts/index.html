@@ -1,0 +1,121 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+ <!-- hero section start -->
+ <section class="hero-section">
+    <div class="container">
+        <div class="hero-sec">          
+            <div class="hero-text">
+                <h1> The <span class="highlight">#1 Fast</span> </br> QR Code Generator <br>
+                for everyone</h1>
+                <p>Stand out with quality trackable QR codes for an</br>every expanding usecase
+                </p>
+                <button class="btn-1">Get started</button>
+                <button class="btn-2">Learn more</button>
+            </div>                               
+            <div class="hero-image">
+                <img src="{% static 'accounts/images/hero_img.svg' %}" alt="hero-img" />
+            </div>    
+        </div>
+    </div>
+</section>
+
+<!--Middle section  -->
+
+<section class="middle-section">
+  <div class="Why-Qr">
+    <div class="intro-text1">Why QR Planet <span>?</span></div>
+    <div class="text1">Qr Planet offers seamless and efficient generation of qr codes. You can<br />
+      create various styles for your qr codes using the various designs<br /> available.</div>
+  </div>
+
+  <div class="Get-onboard">
+    <div class="intro-text2">Get Onboard<span>!</span></div>
+    <div class="text2"><p>Simple Steps, Endless Possibilities.</p> </div>
+    <div class="process">
+      <div class="top-curve">
+        <img src="{% static 'accounts/images/Curve 1.svg' %}" alt="curve1">
+      </div>
+
+      <div class="cards">
+        <div class="first card">
+          <div class="register">
+            <img src="{% static 'accounts/images/Register.svg' %}" alt="reg">
+          </div>
+          <p>Register</p>
+         </div>
+
+        <div class="second card">
+          <div class="feature">
+            <img src="{% static 'accounts/images/Features.svg' %}" alt="feature">
+          </div>
+          <p>Choose a feature</p>
+        </div>
+
+        <div class="third card">
+          <div class="option">
+            <img src="{% static 'accounts/images/options.svg' %}" alt="options">
+          </div>
+          <p>Set Options</p>
+        </div>
+
+        <div class="fourth card">
+          <div class="qr">
+            <img src="{% static 'accounts/images/qr.svg' %}" alt="QR">
+          </div>
+          <p>Generate QR</p>
+        </div>
+      </div>
+
+      <div class="bottom-curve">
+        <div class="curve2"><img src="{% static 'accounts/images/Curve 2.svg' %}" alt="curve2"></div>
+        <div class="curve3"><img src="{% static 'accounts/images/Curve 2.svg' %}" alt="curve2"></div>
+      </div>
+
+    <div><a href="#"><button class="Primary-button">Get Started</button></a></div>
+  </div>
+  <div class="What-we-do">
+    <div class="intro-text3">What We Do</div>
+    <div class="text3">Quickly and easily generate secure, dynamic, trackable QR codes to optimize your engagement
+       levels for</br> personal or business needs.</div>
+    <div class="features">
+        <div class="feature1 icon">
+            <img src="{% static 'accounts/images/Bitcoin.svg' %}" alt="bitcoin">
+            <p>Bitcoin payment</p>
+        </div>
+
+        <div class="feature2 icon">
+            <img src="{% static 'accounts/images/Business-cards.svg' %}" alt="business-card">
+            <p>Business Cards</p>
+        </div>
+        <div class="feature3 icon">
+            <img src="{% static 'accounts/images/Wifi.svg' %}" alt="wifi">
+            <p>Wifi Connect</p>
+        </div>
+        <div class="feature4 icon">
+            <img src="{% static 'accounts/images/Product-description.svg' %}" alt="product">
+            <p>Product Description</p>
+        </div>
+        <div class="feature5 icon">
+            <img src="{% static 'accounts/images/Website.svg' %}" alt="Website">
+            <p>Websites Homepage</p>
+        </div>
+        <div class="feature6 icon">
+            <img src="{% static 'accounts/images/URLS.svg' %}" alt="link">
+            <p>URLs</p>
+        </div>
+        <div class="feature7 icon">
+            <img src="{% static 'accounts/images/Mail.svg' %}" alt="mail">
+            <p>Mail To</p>
+        </div>
+        <div class="feature8 icon">
+            <img src="{% static 'accounts/images/plain text.svg' %}" alt="text">
+            <p>Plain Text</p>
+        </div>
+        <div class="feature9 icon">
+            <p>More...</p>
+        </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

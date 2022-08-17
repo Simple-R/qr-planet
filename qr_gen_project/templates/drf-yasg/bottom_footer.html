@@ -1,0 +1,36 @@
+{% load static %}
+
+<style>
+  .bottom_footer {
+    background-color: #082553;
+    padding: 15px 0;
+    margin-top: 20px;
+
+}
+.footer_2 {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    font-size: 14px;
+    gap: 32;
+}
+
+.footer_2 span {
+    color: #6282b2  
+}
+
+.footer_2 p {
+    margin-right: 70%;
+}
+
+</style>
+
+{% block bottom_footer %}
+<hr>  
+<div class="bottom_footer">
+  <div class="footer_2">
+    <p> <span> 2022 </span> QR Planet&semi; All Rights Reserved&copy;</p>      
+    <a href="#">Report</a>
+  </div>
+</div>
+{% endblock bottom_footer %}

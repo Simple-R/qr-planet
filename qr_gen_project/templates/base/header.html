@@ -1,0 +1,38 @@
+{% load static %}
+
+
+{% block header %} 
+<div class="wrapper"><a href="{% url 'qr_generator:home'%}">
+    <img class="logo" href="{% url 'qr_generator:home'%}" src="{% static 'qr_generator/images/logo.svg'%}" alt="logo" />
+  </a>
+    <nav class="navbar">
+      <input type="checkbox" name="" id="nav-toggle">
+      <div class="nav-links">
+        <ul>
+          <li><a href="{% url 'qr_generator:home'%}">Home</a></li>
+          <li><a href="{% url 'qr_generator:generate_qr' %}">Generate QR Code</a></li>
+          <li><a href="#">Why us?</a></li>
+          <li><a href="{% url 'docs'%}">API</a></li>
+          <li><a href="{% url 'qr_generator:contact'%}">Contact</a></li>
+        </ul>
+        <div class="nav-button">
+            {% if request.user.is_authenticated %}
+                <button type = "submit" class="Secondary-button"><a href="{% url 'accounts:logout'%}">Logout</a></button>
+                <button type = "submit" class="Primary-button"><a href="#">Dashboard</a></button>
+            {% else %}
+                <button type = "submit" class="Secondary-button"><a href="{% url 'accounts:login'%}">Login</a></button>
+                <button type = "submit" class="Primary-button"><a href="{% url 'qr_generator:generate_qr' %}">Get Started</a></button>
+                
+            {% endif %}
+            
+          
+        </div>
+      </div>            
+      <label for="nav-toggle" class="icon-burger"> 
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div> 
+      </label>  
+    </nav>
+  </div> 
+{% endblock header %}

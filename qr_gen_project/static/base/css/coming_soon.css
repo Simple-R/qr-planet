@@ -1,0 +1,28 @@
+
+body {
+    background-image: linear-gradient(to bottom, #b6cff4 0%, var(--secondary-color-200) 34%, var(--white-2) 90%);    
+}
+
+
+.container{    
+    width: 80%;    
+    margin: auto;    
+    padding: 100px 0;    
+}
+    
+.container h1{
+    padding-bottom: 50px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 80px;
+    font-weight: 800;   
+    text-align: center;
+    color: var(--black-for-texts);
+}
+
+.container p{    
+    padding: 40px 0;
+    font-family: "Outfit", sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: var(--grey-700);
+}

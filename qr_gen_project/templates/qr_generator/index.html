@@ -1,0 +1,186 @@
+{% extends 'base/base.html'%}
+{% load static%}
+
+
+   
+{% block title %}{{ block.super }}{% endblock title %}
+    {% block style %} 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'qr_generator/css/homepage.css'%}" />
+    {% endblock style %}
+    
+ 
+
+    {% block header %} {% include 'base/header.html'%}{% endblock header %}
+    
+    {% block content %} 
+
+    <section class="hero-bg">
+        <div class="hero-section">
+          <div class="wrapper">
+            <div class="hero-text">
+              <div class="hero-head">
+                <div>The <span class="highlight">#1</span></div>                     
+                  <div class="slider">
+                    <div> Fast</div>
+                    <div> Dynamic</div>
+                    <div> Secure</div>
+                  </div>                
+              </div>
+              <div class="hero-head2">
+                QR Code Generator <br>for everyone 
+                <p>Stand out with quality trackable QR codes for an every expanding usecase</p> 
+                
+                {% if request.user.is_authenticated %}
+                <p>Hi <span class="highlight">{{request.user.username|title}}</span> what would you like to do&quest;</p> 
+                  
+                {% endif %}
+                  
+              </div>
+            </div> 
+            <img src="{% static 'qr_generator/images/hero_img.svg'%}" alt="img">   
+        </div>
+            <div class="wrapper">
+              <div class="hero-button">
+              <button class="Primary-button"> <a href="{% url 'qr_generator:generate_qr' %}"> Get started </a></button>
+              <button class="btn-2"> <a href="{% url 'qr_generator:learn_more'%}"> Learn more </a></button>
+            </div> 
+            </div>
+        </div>
+    </section>
+
+<section class="middle-section">
+    <div class="wrapper">
+        <div class="Why-Qr">
+          <div class="heading">Why QR Planet <span>?</span></div>
+          <div class="text">Qr Planet offers seamless and efficient generation of qr codes. You can <br />
+            create various styles for your qr codes using the various designs<br/> available.</div>
+        </div>
+    
+        <div class="Get-onboard">
+          <div class="heading">Get Onboard<span>!</span></div>
+          <div class="text">Simple Steps, Endless Possibilities.</div>
+
+            <div class="process">
+                <div class="top-curve">
+                <img src="{% static 'qr_generator/images/Curve 1.svg'%}" alt="curve1">
+                </div>
+  
+                <div class="cards">
+                <div class="first card">
+                    <div class="register">
+                    <img src="{% static 'qr_generator/images/Register.svg'%}" alt="reg">
+                    </div>
+                    <p>Register</p>
+               </div>    
+    
+                <div class="second card">
+                    <div class="feature">
+                    <img src="{% static 'qr_generator/images/Features.svg'%}" alt="feature">
+                    </div>
+                    <p>Choose a feature</p>
+                </div>
+        
+                <div class="third card">
+                    <div class="option">
+                    <img src="{% static 'qr_generator/images/Features.svg'%}" alt="options">
+                    </div>
+                    <p>Set Options</p>
+                </div>
+    
+                <div class="fourth card">
+                    <div class="qr">
+                    <img src=" {% static 'qr_generator/images/qr.svg'%}" alt="QR">
+                    </div>
+                    <p>Generate QR</p>
+                </div>
+            </div>
+
+            <div class="bottom-curve">
+              <div class="curve2"><img src="{% static 'qr_generator/images/Curve 2.svg'%}" alt="curve2"></div>
+              <div class="curve3"><img src="{% static 'qr_generator/images/Curve 2.svg'%}" alt="curve3"></div>
+            </div>
+          </div>
+  
+          <button type = "submit" class="Primary-button"><a href="#">Get Started</a></button> 
+        </div>
+    
+        <div class="What-we-do">  
+            <div class="heading">What We Do</div>  
+            <div class="text">
+            Quickly and easily generate secure, dynamic, trackable QR codes to
+            optimize your engagement levels for <br> personal or business needs.          
+            </div>   
+
+            
+        </div>
+        <div class="all-features">
+
+        <div class="features">
+            <img src="{% static 'qr_generator/icons/Bitcoin.svg'%}" alt="bitcoin">
+             <p>Bitcoin payment</p>            
+        </div>
+
+          <div class="features">
+            <img src="{% static 'qr_generator/icons/Business-cards.svg'%}" alt="business-cards">
+            <p>Business cards</p>            
+          </div>
+
+          <div class="features">
+            <img src="{% static 'qr_generator/icons/Wifi.svg'%}" alt="Wifi-connect">
+            <p>Wifi connect</p>            
+          </div>     
+
+          <div class="features">
+            <img src="{% static 'qr_generator/icons/Product-description.svg'%}" alt="Product-description">
+            <p>Product description</p>            
+          </div>
+
+          <div class="features">
+            <img src="{% static 'qr_generator/icons/Website.svg'%}" alt="Website-homepage">
+            <p>Website homepage</p>            
+          </div>
+
+          <div class="features">
+            <img src="{% static 'qr_generator/icons/URLS.svg'%}" alt="URLs">
+            <p>URLs</p>            
+          </div>
+
+          <div class="features">
+            <img src="{% static 'qr_generator/icons/Mail.svg'%}" alt="Mail-to">
+            <p>Mail to</p>            
+          </div>
+
+          <div class="features">
+            <img src="{% static 'qr_generator/icons/plain text.svg'%}" alt="Plain text">
+            <p>Plain text</p>          
+        </div>
+
+          <div class="features">
+            <p>More...</p>
+          </div>
+
+        </div>
+
+        </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+
+
+    
+    {% block top_footer %} {% include 'base/top_footer.html'%} {% endblock top_footer %}
+    {% block middle_footer %} {% include 'base/middle_footer.html'%} {% endblock middle_footer %}
+
+{% block bottom_footer %}
+    {% include 'base/bottom_footer.html'%}
+{% endblock bottom_footer %}
+
+{% block extra_script %}
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+{% endblock extra_script %}

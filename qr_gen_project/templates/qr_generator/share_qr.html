@@ -1,0 +1,20 @@
+{% extends 'qr_generator/generateqr.html'%}
+{% load static %}
+
+{% load social_share %}
+
+
+{% block title %}|&nbsp;Share&nbsp;QR&nbsp;Code{% endblock title %}
+
+{% block content %}
+<div style="margin: 15;">
+  {% post_to_facebook object_or_url "Post to Facebook!" %}
+
+  {% post_to_twitter "Hey QR planet Generates beautiful and quality QR codes, here's mine. {{ qr_image }}" object_or_url  'Post to twitter' %}
+    
+  {% send_email "My QR for QR Planet" "Hi Check out my QR code From QR Planet {{ qr_image }}" object_or_url link_text link_class %}
+
+  
+    </div>
+
+{% endblock content %}

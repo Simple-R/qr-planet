@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="qr code generator" />
+        <meta name="description" content="The Easiest Way to generate, download &amp; share QR Codes
+        Online with QR Planet Code Generator within few minutes. Get started today."/>
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta itemprop="description" content="Quickly Generate, Download and Share QR Codes!"/>
+        <title>Qr Planet</title>
+        <link rel="icon" sizes="192x192" href="{% static 'base/favicon_io/android-chrome-192x192.png' %}"/>
+        <link rel="apple-touch-icon" type="image/png" href="{% static 'base/favicon_io/apple-touch-icon.png' %}"/>
+        <link rel="icon" type="image/png" sizes="512x512" href="{% static 'base/favicon_io/android-chrome-512x512.png' %}"/>
+        <link rel="shortcut icon" href="{% static 'base/favicon_io/favicon.ico' %}" type="image/x-icon"/>
+        <link rel="stylesheet" href="{%  static 'accounts/css/homepage.css' %}"/>
+        <link rel="stylesheet" href="{% static 'accounts/css/faq.css' %}">
+        <link rel="stylesheet" href="{% static 'accounts/css/fonts.css' %}">
+    </head>
+    
+      <body>
+        <header>
+          <!-- <div class="wrapper"> -->
+          <div class="inner-header">
+            <a href="{% url 'accounts:index' %}"><img class="logo" src="{% static 'accounts/images/logo.svg' %}" alt="logo" /></a>
+            <nav>
+              <ul class="nav_links">
+                <li><a href="{% url 'accounts:index' %}">Home</a></li>
+                <li><a href="#">QR code</a></li>
+                <li><a href="#">Why us?</a></li>
+                <li><a href="#">API</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+              {% if request.user.is_authenticated %}
+              <button type = "submit" href="{% url 'accounts:dashboard' %}" class="Secondary-button">Dashboard</button>
+              <button type = "submit" href="{% url 'accounts:logout' %}" class="Primary-button">Logout</button>
+              {% else %}
+              <button type = "submit" href="{% url 'accounts:login' %}" class="Secondary-button">Login</button>
+              <button type = "submit" href="{% url 'accounts:register' %}" class="Primary-button">Get started</button>
+              {% endif %}
+          </div>
+        </nav>
+        </header>
+
+    <!-- header end-->
+{% block content %}
+
+{% endblock %}
+</body>
+<footer>
+    <div class="main_footer">
+      <div class="top_footer">
+        <div>
+          <h4>Don't miss out!</h4>
+          <p>Do you like discounts, specials offers and rewards?</p>
+        </div>
+          <form>        
+            <input type="email" class="mail" placeholder="Email" class="">          
+            <button type="submit" class="footer-button">Subscribe Now </button>
+          </form>
+      </div>    
+      </div> <hr>
+
+      <div class="middle_footer">
+        <p class="md_footer_info">Enjoy seamless and efficient generation of qr codes. Create various styles for your qr codes using the various designs available</span></p>
+        <div class="footer_info">
+          <p>QR Planet</p>
+          <ul>
+            <li><a href="#">How to generate QR codes</a></li>
+            <li><a href="#">Dynamic QR codes</a></li>
+            <li><a href="#">Static QR codes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer_info">
+            <p>Why us?</p>
+          <ul>
+            <li>Product features</li>
+            <li>About us</li>
+            <li>FAQs</li>
+        </div>
+        <div class="footer_info">
+          <p>API</p>
+          <ul>
+            <li>API docs</li>
+          </ul>
+        </div>      
+        <div class="footer_info">
+          <p>Contact</p>
+          <!-- <div class="socials"> -->
+          <img src="{% static 'accounts/images/Twitter.png' %}" alt="Twitter" height="24px"/>
+          <img src="{% static 'accounts/images/Facebook.png' %}" alt="Facebook" height="24px" />
+          <img src="{% static 'accounts/images/Linkedin.png' %}" alt="Linkedin" height="24px" />
+        <!-- </div> -->
+    </div>
+  </div>
+    <hr>  
+  <div class="bottom_footer">
+      <div class="footer_2">
+        <p><span>2022 </span> QR Planet; All Rights Reserved</p>      
+        <a href="#">Report</a>
+      </div>
+
+  </div>
+
+  </footer>
+
+</html>

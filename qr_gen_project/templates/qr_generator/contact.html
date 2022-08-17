@@ -1,0 +1,43 @@
+{% extends 'base/base.html' %} {% load static %}
+<!-----------------Leave here for header------------->
+<!-------------------end header---------------------->
+
+{% block title %} {{ block.super }}&nbsp;&#124;&nbsp;Contact Us {% endblock title %}
+
+{%block style %}
+	<link rel="stylesheet" href="{% static 'qr_generator/css/contact_us.css'%}" />
+{% endblock style %}
+
+{% block content %}
+<div class="container">
+  <h1>We value your feedback <span class="highlight">!</span></h1>
+  <p>Have questions, comments or complaints? We are all ears</p>
+  <form action="" method="post">
+    {% csrf_token%}
+
+    <div>
+      {{form.name}}
+    </div>
+    <div>
+      {{form.email}}
+    </div>
+    <div>
+      {{form.subject}}
+    </div>
+    <div>
+      {{form.message}}
+    </div>
+    <input type="submit" class="Primary-Button" value="Send your message"/>
+  </form>
+  <div class="socials">
+    <img src="{% static 'qr_generator/images/Twitter.png' %}" alt="Twitter" />&nbsp;&nbsp;
+    <img src="{% static 'qr_generator/images/Facebook.png' %}" alt="Facebook" />&nbsp;&nbsp;
+    <img src="{% static 'qr_generator/images/Linkedin.png' %}" alt="Linkedin" />
+  </div>
+  
+</div>
+
+{% endblock content %}
+
+<!-----------------Leave here for footer--------->
+<!-------------------end footer---------------------->

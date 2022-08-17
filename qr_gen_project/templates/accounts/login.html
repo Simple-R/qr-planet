@@ -1,0 +1,81 @@
+{% extends 'qr_generator/index.html'%}
+
+{% load static%}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'accounts/css/Login.css'%}">
+{% endblock style %}
+
+{% block title %} {{ block.super }}&nbsp;&#124;&nbsp;Login {% endblock title %}
+{% block content %}
+
+<div class="container">
+    <div class="mobile-logo">
+      <img src="{% static 'accounts/images/mobile_logo.png'%}" alt="Logo" />
+    </div>
+    <div class="forms">
+      <div class="form login">
+        <p class="title">Welcome</p>
+        <p class="sub-title">We're happy to have you back</p>
+        <form action="{% url 'accounts:login' %}" method="post">
+            {% csrf_token%}
+          <div class="input-field">
+            <input type="text" id="email" name="email" placeholder="Enter your email" required />
+            <i class="uil uil-envelope icon"></i>
+          </div>
+          <div class="input-field">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+            <!-- <i class="uil uil-lock icon"></i> -->
+            <i class="uil uil-eye-slash showHidePw"></i>
+          </div>
+
+          <div class="checkbox-text">
+            <div class="checkbox-content">
+              <input type="checkbox" id="logCheck" checked/>
+              <label for="logCheck" class="text">Keep me logged in</label>
+            </div>
+
+            <a href="{% url 'accounts:password_reset'%}" class="text">Forgot password?</a>
+          </div>
+
+          <div class="input-field button">
+            <input type="submit" value="Login" required />
+          </div>
+        </form>
+
+        <div class="login-signup">
+          <span class="text"
+            >Not yet registered&quest;
+            <a href="{% url 'accounts:register'%}" class="text signup-text">Sign Up</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'accounts/js/custom/validate_login.js' %}"></script>
+
+</script>
+<script>
+    var form_fields = document.getElementsByTagName("input");
+    form_fields[2].placeholder = "Enter your Email...";
+    form_fields[3].placeholder = "Enter Your Password...";
+
+    for (var field in form_fields) {
+    form_fields[field].className += " form-control";
+    }
+</script>
+
+{% endblock content%}
+
+
+{# Override top and middle footer#}
+
+{% block top_footer %}{% endblock top_footer %}
+{% block middle_footer %}{% endblock middle_footer %}
