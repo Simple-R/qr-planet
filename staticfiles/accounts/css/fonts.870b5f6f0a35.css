@@ -1,0 +1,399 @@
+
+
+@font-face {
+  font-family: Montserrat;
+  src: local(Montserrat-Regular),
+    url(/path/to/Montserrat-Regular.woff2) format("woff2"),
+    url(/path/to/Montserrat-Regular.woff) format("woff"),
+    url(/path/to/Montserrat-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: local(Montserrat-SemiBold),
+    url(/path/to/Montserrat-SemiBold.woff2) format("woff2"),
+    url(/path/to/Montserrat-SemiBold.woff) format("woff"),
+    url(/path/to/Montserrat-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: local(Montserrat-Bold),
+    url(/path/to/Montserrat-Bold.woff2) format("woff2"),
+    url(/path/to/Montserrat-Bold.woff) format("woff"),
+    url(/path/to/Montserrat-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: local(Montserrat-ExtraBold),
+    url(/path/to/Montserrat-ExtraBold.woff2) format("woff2"),
+    url(/path/to/Montserrat-ExtraBold.woff) format("woff"),
+    url(/path/to/Montserrat-ExtraBold.ttf) format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: Outfit;
+  src: local(Outfit-Regular),
+    url(/path/to/Outfit-Regular.woff2) format("woff2"),
+    url(/path/to/Outfit-Regular.woff) format("woff"),
+    url(/path/to/Outfit-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: Outfit;
+  src: local(Outfit-SemiBold),
+    url(/path/to/Outfit-SemiBold.woff2) format("woff2"),
+    url(/path/to/Outfit-SemiBold.woff) format("woff"),
+    url(/path/to/Outfit-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: Outfit;
+  src: local(Outfit-Bold),
+    url(/path/to/Outfit-Bold.woff2) format("woff2"),
+    url(/path/to/Outfit-Bold.woff) format("woff"),
+    url(/path/to/Outfit-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: Outfit;
+  src: local(Outfit-ExtraBold),
+    url(/path/to/Outfit-ExtraBold.woff2) format("woff2"),
+    url(/path/to/Outfit-ExtraBold.woff) format("woff"),
+    url(/path/to/Outfit-ExtraBold.ttf) format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+.Desktop-Heading-1-Mont {
+  font-family: Montserrat;
+  font-size: 92px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.39;
+  letter-spacing: normal;
+}
+
+.Desktop-HeadingDesktop-Header-01 {
+  font-family: Outfit;
+  font-size: 92px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.39;
+  letter-spacing: normal;
+}
+
+.Desktop-Heading-2-Mont {
+  font-family: Montserrat;
+  font-size: 80px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+
+.Desktop-HeadingDesktop-Header-02 {
+  font-family: Outfit;
+  font-size: 80px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+
+.Desktop-Heading-3 {
+  font-family: Montserrat;
+  font-size: 68px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.41;
+  letter-spacing: normal;
+}
+
+.Desktop-HeadingDesktop-Header-03 {
+  font-family: Outfit;
+  font-size: 68px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.41;
+  letter-spacing: normal;
+}
+
+.Desktop-Heading-4 {
+  font-family: Montserrat;
+  font-size: 56px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+}
+
+.Desktop-HeadingDesktop-Header-04 {
+  font-family: Outfit;
+  font-size: 56px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+}
+
+.Mobile-Heading-Mont {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.42;
+  letter-spacing: normal;
+}
+
+.Mobile-HeadingMobile-Header-01 {
+  font-family: Outfit;
+  font-size: 48px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.42;
+  letter-spacing: normal;
+}
+
+.Desktop-Heading-5 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.36;
+  letter-spacing: normal;
+}
+
+.Desktop-HeadingDesktop-Header-05 {
+  font-family: Outfit;
+  font-size: 44px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.36;
+  letter-spacing: normal;
+}
+
+.Mobile-HeadingMobile-Header-02 {
+  font-family: Outfit;
+  font-size: 40px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+
+.Mobile-HeadingMobile-Header-03 {
+  font-family: Outfit;
+  font-size: 36px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+}
+
+.Desktop-Titles-Monsterat {
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+}
+
+.Mobile-HeadingMobile-Header-04 {
+  font-family: Outfit;
+  font-size: 32px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+}
+
+.Desktop-Heading-6 {
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+}
+
+.Desktop-HeadingDesktop-Header-06 {
+  font-family: Outfit;
+  font-size: 32px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+}
+
+.Mobile-HeadingMobile-Header-05 {
+  font-family: Outfit;
+  font-size: 28px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+}
+
+.Desktop-Body-TextDesktop-body-text-larger {
+  font-family: Outfit;
+  font-size: 28px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+}
+
+.Mobile-HeadingMobile-Header-06 {
+  font-family: Outfit;
+  font-size: 24px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+}
+
+.Desktop-body-Large {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+}
+
+.Desktop-Body-TextDesktop-body-text-large {
+  font-family: Outfit;
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+}
+
+.Mobile-Body-TextMobile-Body-Text-Large {
+  font-family: Outfit;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+
+.Desktop-body-medium {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+
+.Mobile-Body-TextMobile-Body-Text-Mediium {
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+}
+
+.Desktop-Body-TextDesktop-body-text-medium {
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+
+.Body-text-13 {
+  font-family: Outfit;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+}
+
+.Mobile-Body-TextMobile-Body-Text-Small {
+  font-family: Outfit;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+}
+
+.Desktop-body-small {
+  font-family: Montserrat;
+  font-size: 8px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+
+.Desktop-Body-TextDesktop-body-text-small {
+  font-family: Outfit;
+  font-size: 8px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+}

@@ -1,0 +1,127 @@
+
+
+footer {
+    background-color: var(--primary-color-200);
+    font-family: "Outfit", sans-serif;
+    color: var(--wc-1);
+}
+
+footer hr {
+    width: 55%;
+    margin: auto;
+    height: 3px;
+    opacity: 0.1;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+    background-color: var(--white);
+}
+
+
+.top_footer {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 30px 0;
+    display: flex;
+}
+
+/* Top footer */
+.top_footer h4 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.top_footer p {
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+.mail {
+    width: 413px;
+    padding: 11px 32px;
+    margin: 15px 30px;
+    border-radius: 8px;
+    font-family: "Outfit", sans-serif;
+    border: solid 1px var(--grey-600);
+    color: var(--grey-600);
+}
+
+.footer-button {
+    padding: 8px 40px;
+    border-radius: 8px;
+    border: solid 1px var(--grey-600);
+    background-color: var(--white);
+    font-size: 14px;
+    color: var(--primary-color-200);
+}
+
+.middle_footer {
+    width: 80%;
+    margin: auto;
+    padding: 30px 0;
+    display: flex;
+}
+
+.md_footer_info {
+    width: 30%;
+    color: var(--secondary-color-300);
+    margin: 20px 15px 0 0;
+    font-size: 14px;
+}
+
+.middle_footer p {
+    font-size: 14px;
+    margin-right: 5px 0px;
+    color: var(--secondary-color-300);
+    line-height: 1.5em;
+}
+
+
+.middle_footer ul {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+}
+
+.middle_footer li,
+a {
+    color: var(--secondary-color-300);
+    padding: 0;
+    display: block;
+    line-height: 2em;
+}
+
+.footer_info {
+    margin: 0 40px;
+}
+
+.footer_info p {
+    color: var(--wc-1);
+    margin-bottom: 10px;
+}
+
+.footer_info img {
+    margin: 4px;
+}
+
+.bottom_footer {
+    background-color: var(--primary-color-300);
+    padding: 15px 0;
+    margin-top: 20px;
+
+}
+
+.footer_2 {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    font-size: 14px;
+    gap: 32;
+}
+
+.footer_2 span {
+    color: var(--secondary-color-400)
+}
+
+.footer_2 p {
+    margin-right: 70%;
+}

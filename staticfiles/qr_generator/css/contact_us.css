@@ -1,0 +1,89 @@
+style.css
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../svg/contact_us.svg);
+    background-size: cover;
+}
+
+.container {
+    width: 50%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 8px;
+    border: solid 1px var(--secondary-color-200);
+}
+
+.container h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: px;
+    font-weight: bold;
+    color: var(--primary-color-300);
+}
+
+.container p {
+    font-family: "Outfit", sans-serif;
+    font-size: 18px;
+    color: var(--primary-color-300);
+    margin-bottom: 30px;
+}
+
+.highlight {
+    transform: rotateX(15deg);
+    font-family: "Montserrat", sans-serif;
+    font-size: 92px;
+    font-weight: 800;
+    color: var(--secondary-color-200);
+}
+
+.container input, textarea {
+    width: 55vh;
+    height: 40px;
+    border: 1px solid var(--gc-600);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    font-family: "Outfit", sans-serif;
+    font-size: 12px;
+}
+
+textarea {
+    resize: none;
+    width: 55vh;
+    height: 164px;
+    padding-top: 10px;
+}
+
+.socials {
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 12;
+    margin: 20px;
+}
+
+.Primary-Button {
+    width: 55vh;
+    height: 40px;
+    padding: 8px 32px;
+    border-radius: 8px;
+    font-family: Outfit;
+    font-size: 14px;
+    border: none;
+    color: var(--white);
+    background-color: var(--primary-color-200);
+    align-items: center;
+}
