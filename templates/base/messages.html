@@ -1,7 +1,7 @@
 {% load static %}
 
 {% for message in messages %}
-<div class="alert alert-{{message.tags}} fade show" role="alert" id="message_div" style="text-align:center; background-color: var(--secondary-color-300);">
+<div class="alert alert-{{message.tags}} fade show" role="alert" id="message_div" style="text-align:center; background-color: var(--secondary-color-300);;">
   <h3></h3><strong>{{message}}</strong> 
 </div>
 {% endfor %}

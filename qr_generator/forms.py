@@ -5,7 +5,7 @@ class ContactUsForm(forms.Form):
     name = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                'placeholder':'Username',
+                'placeholder':'Full Name',
                 'required':True,
                 'name':'name',
                 'type':'text',

@@ -45,7 +45,7 @@ def register(request):
 			password = form.cleaned_data.get('password1')
 			user = authenticate(request, email=email, password=password)
 		
-			login(request, user)
+			login(request, get_user_model())
 			messages.success(request," Account was Created for "+email)
 			return redirect('qr_generator:home')
 		
@@ -67,7 +67,6 @@ def login_view(request):
 	context = {}
 
 	if request.method =='POST':
-		username = request.POST.get('username')
 		email = request.POST.get('email')
 		password = request.POST.get('password')
 
@@ -75,7 +74,7 @@ def login_view(request):
 
 		if user is not None:
 			login(request, user)
-			messages.success(request, f"You are now logged in as {email}.")
+			messages.success(request, f"You are now logged in as {request.user.username}.")
 			return redirect('qr_generator:home',) # pk=str(request.user.id)
 		
 		else: 
@@ -93,8 +92,8 @@ def dashboard(request):
 @login_required(login_url="/qr-gen/accounts/login")
 def log_out(request):
 	logout(request)
-	messages.success(request, f'{request.user} Logged out')
-	return redirect(to='qr_generator:home')
+	messages.success(request, f"You Have been logged out")
+	return redirect('qr_generator:home',) # pk=str(request.user.id)
 
 
 def password_reset_request(request):

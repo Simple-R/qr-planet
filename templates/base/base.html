@@ -36,7 +36,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
   />
   
-  <title>QR&nbsp;Planet{% block title %} {% endblock title %}</title>
+  <title>QR&nbsp;Planet&nbsp;&verbar;&nbsp;{% block title %}{% endblock title %}</title>
 
     {% block style %} {% endblock style %}
     {% endblock head %}
@@ -46,7 +46,7 @@
       {% include 'base/messages.html' %}
     {% endif%}
     <header>      
-      {% block header %} {% endblock header %}
+      {% block header %}{% include 'base/header.html'%}{% endblock header %}
     </header>
 
     {% block content %} {% endblock content %}
@@ -55,7 +55,7 @@
     <footer>
         {% block top_footer %}{% endblock top_footer %}
         {% block middle_footer %}{% endblock middle_footer %}
-        {% block bottom_footer %}{% endblock bottom_footer %}
+        {% block bottom_footer %}{% include 'base/bottom_footer.html'%}{% endblock bottom_footer %}
     </footer>
 
 

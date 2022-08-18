@@ -16,7 +16,7 @@ urlpatterns += [
 ]
 
 urlpatterns +=[
-    path('contact-us/', views.contact_us, name='contact'),
+    path('contact-us/', views.contact_us, name='contact_us'),
     path('learn-more/', views.learn_more, name="learn_more"), 
 ]
 

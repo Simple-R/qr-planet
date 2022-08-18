@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %} {% load static %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'base/css/contact_us.css'%}">
+{% endblock style %}
+
+{% block title %}Contact Us{% endblock title %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="mobile-logo">
+      <img src="{% static 'base/images/mobile_logo.png'%}" alt="Logo" />
+    </div>
+    <div class="wrapper">
+      <div class="heading">We value your feedback<span>!</span></div>
+      <div class="text">
+        Have questions, comments or complaints? We are all ears
+      </div>
+
+      <form action="{% url 'qr_generator:contact_us' %}" method="POST" id="contact-form">
+        {% csrf_token %}
+
+        {% for field in form %}
+            {{field}}
+        {% endfor %}
+        <button class="Primary-button" form="contact-form">
+          Send your message
+        </button>
+      </form>
+      <div class="icons">
+        <img src="{% static 'qr_generator/images/Twitter.png' %}" alt="Twitter" height="24px"/>
+        <img src="{% static 'qr_generator/images/Facebook.png' %}" alt="Facebook" height="24px"/>
+        <img src="{% static 'qr_generator/images/Linkedin.png' %}" alt="Linkedin" height="24px"/>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

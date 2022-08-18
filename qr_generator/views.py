@@ -39,8 +39,12 @@ def dashboard(request):
     context = {}
 
     try:
-        user_items = UserCollection.objects.filter(qr_user=request.user)
-        user_items = user_items.qr_co
+        user_ = UserCollection.objects.filter(qr_user=request.user)
+        qr_code = [qr.qr_code for qr in user_]
+        user_items = []
+
+        # fetch the QR from QRcollections and append to the list
+        [user_items.append(QRCollection.objects.get(id=qr)) for qr in qr_code]
         context['user_items'] = user_items
     
     except QRCollection.DoesNotExist as ex:
@@ -169,8 +173,7 @@ def category(request, pk):
 def save_qr(request, id):
     user = request.user
     UserCollection.objects.create(qr_user=user, qr_code=id)
-    print('saved')
-    messages.success(request, 'Your QR has been saved!! Go to You Dashboard to view it')
+    messages.success(request, 'Your QR has been saved!! Go to Your Dashboard to view it')
     return  render(request, 'qr_generator/generateqr.html')
 
 def form(request, template):
@@ -179,6 +182,7 @@ def form(request, template):
 
 
 def contact_us(request):
+    template = 'base/contact_us.html'
  
     context = {}
     if request.method == "POST":
@@ -199,10 +203,14 @@ def contact_us(request):
 
             except SMTPServerDisconnected:
                 messages.error(request, message="Network Connection failed")
-                return redirect(to='qr_generator:contact')
+                return redirect(to='qr_generator:contact_us')
 
             except Exception as err:
                 return HttpResponse("We haven't encountered this problem before") # TODO: will fix this when error page comes
+
+        else:
+            messages.info(request, 'One or more fields are empty!!')
+            return render(request, template, context)
 
             
     else:
@@ -210,9 +218,7 @@ def contact_us(request):
 
     context['form'] = form
     
-    return render(request, 'qr_generator/contact.html', context)
-
-
+    return render(request, template, context)
 
 
 # Define function to download pdf file using template

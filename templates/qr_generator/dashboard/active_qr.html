@@ -1,6 +1,11 @@
 {% extends 'qr_generator/dashboard/dashboard.html' %}
 {% load static %}
 
+{# Load the style #}
+{% block style %}
+  <link rel="stylesheet" href="{% static 'dashboard/css/active_qr.css'%}">
+{% endblock style %}
+
 {% load humanize %}
 
 {% block specific_content %}
@@ -13,8 +18,8 @@
     <div class="active-qr">
       {% for qr in user_items %}
       <figure>
-        <img src="{{ qr.qr_collections_set.qr_code.url }}" alt="">
-        <figcaption>{{ qr.category }}..({{qr.time_created|naturaltime }})</figcaption>
+        <img src="{{ qr.qr_code.url }}" alt="">
+        <figcaption><b>{{ qr.category }}</b>... <small><i> {{qr.time_created|naturaltime }}</i></small></figcaption>
       </figure>
       {% endfor %}
     </div> 

@@ -1,0 +1,1 @@
+User can't save QR and download concurrently

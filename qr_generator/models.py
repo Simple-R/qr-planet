@@ -15,7 +15,6 @@ from PIL import Image, ImageDraw
 from io import BytesIO
 from django.core.files import File
 OUR_LOGO = STATIC_ROOT + '/base/images/' + 'qr_logo.png'
-# Create your models here.
 import random
 import datetime
 
@@ -103,50 +102,3 @@ class UserCollection(models.Model):
     class Meta:
         db_table = 'user_collection'
         verbose_name_plural = 'user_collections'
-
-
-
-
-# delete This
-class MyQRCode(models.Model):
-   url=models.URLField()
-   image=models.ImageField(upload_to='qrcode',blank=True)
-   user = models.CharField(max_length=200, blank=True, null=True)
-
-   def save(self,*args,**kwargs):
-        our_logo = Image.open(OUR_LOGO)
-        # adjust image size
-        widthpercent = (100/float(our_logo.size[0]))
-        hsize = int((float(our_logo.size[1])*float(widthpercent)))
-        our_logo = our_logo.resize((100, hsize), Image.ANTIALIAS)
-
-        QRcode = qrcode.QRCode(
-        version=3,
-        box_size = 10,
-        border=2,
-        error_correction=qrcode.constants.ERROR_CORRECT_M
-        )
-
-        QRcode.make(fit=True)
-    
-        QRimg = QRcode.make_image(
-            fill_color='black', back_color="white").convert('RGB')
-
-         # set size of QR code
-        pos = (
-            (QRimg.size[0] - our_logo.size[0]) // 2,
-            (QRimg.size[1] - our_logo.size[1]) // 2
-            )
-
-        QRimg.paste(our_logo, pos)
-
-        canvas=Image.new("RGB", (300,300),"white")
-        draw=ImageDraw.Draw(canvas)
-        canvas.paste(QRimg)
-
-        buffer=BytesIO()
-        canvas.save(buffer,"PNG")
-        self.image.save(f'{self.user}{random.randint(0,9999)}.png',File(buffer),save=False)
-        canvas.close()
-        super().save(*args,**kwargs)
-
