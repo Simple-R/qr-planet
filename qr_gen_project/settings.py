@@ -162,7 +162,7 @@ REST_FRAMEWORK = {
 
 
 # app specifics
-LOGOUT_REDIRECT_URL = '/qr-gen/'
+LOGOUT_REDIRECT_URL = '/'
 
 AUTH_USER_MODEL='accounts.QRUser'
 
