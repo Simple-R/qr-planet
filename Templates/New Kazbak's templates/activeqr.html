@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/activeqr.css">
+    <title>Active QR Codes</title>
+</head>
+    <body>
+    <header>
+      <div class="wrapper">
+        <img class="logo" href="#" src="images/logo.svg" alt="logo" />
+        <nav class="navbar">
+          <input type="checkbox" name="" id="nav-toggle" />
+          <div class="nav-links">
+            <ul>
+              <!-- Each page needs to have class="active" for the underline style to apply -->
+              <li><a href="index.html">Home</a></li>
+              <li class="active"><a href="#">Generate QR Code</a></li>
+              <li><a href="#">Why us?</a></li>
+              <li><a href="#">API</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <label for="nav-toggle" class="icon-burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </label>
+        </nav>
+        <div class="nav-button">
+          <button type="submit" class="Secondary-button">
+            <a href="#">Login</a>
+          </button>
+          <button type="submit" class="Primary-button">
+            <a href="#">Get Started</a>
+          </button>
+        </div>
+      </div>
+    </header>
+        <section class="dashboard-content">
+            <div class="wrapper">
+                <div class="sidebar">
+                <ul>
+                    <li>
+                    <a href="#"><i class="uil uil-user-circle"></i>Profile</a>
+                    </li>
+                    <li>
+                    <a href="#"><i class="uil uil-folder-download"></i>My Folders</a>
+                    </li>
+                    <li>
+                    <a href="#"  id="dash-active-page"><i class="uil uil-cloud-check"></i>Active QR Codes</a>
+                    </li>
+                    <li >
+                    <a href="#"><i class="uil uil-clock"></i>History</a>
+                    </li>
+                    <li>
+                    <a href="#"><i class="uil uil-shield"></i>Change Password</a>
+                    </li>
+                    <li>
+                    <a href="#"><i class="uil uil-question-circle"></i>Help</a>
+                    </li>
+                    <li>
+                    <a href="#" class="delete">Delete Account</a>
+                    </li>
+                </ul>
+                </div>
+
+                <div class="container">                    
+                    <img src="./images/active_qr.png" alt="Logo" />                    
+                    <div class="content">
+                        <p>You haven't created any QR codes</p>
+                    </div>
+                </div>
+        </section>
+
+        <footer>
+        <div class="bottom_footer">
+            <div class="wrapper">
+            <div class="footer_2">
+                <p><span>2022</span> QR Planet; All Rights Reserved</p>
+                <a href="#">Report</a>
+            </div>
+            </div>
+        </div>
+        </footer>
+    </body>
+    </html>

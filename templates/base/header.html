@@ -18,7 +18,7 @@
         <div class="nav-button">
             {% if request.user.is_authenticated %}
                 <button type = "submit" class="Secondary-button"><a href="{% url 'accounts:logout'%}">Logout</a></button>
-                <button type = "submit" class="Primary-button"><a href="#">Dashboard</a></button>
+                <button type = "submit" class="Primary-button"><a href="{% url 'qr_generator:active_qr' %}">Dashboard</a></button>
             {% else %}
                 <button type = "submit" class="Secondary-button"><a href="{% url 'accounts:login'%}">Login</a></button>
                 <button type = "submit" class="Primary-button"><a href="{% url 'qr_generator:generate_qr' %}">Get Started</a></button>

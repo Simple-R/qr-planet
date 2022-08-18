@@ -1,0 +1,56 @@
+{% extends 'qr_generator/index.html' %}
+
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'dashboard/css/active_qr.css'%}">
+{% endblock style %}
+
+ {% block title %}|&nbsp;Active&nbsp;QR{% endblock title %}
+   
+
+ {% block content %}
+    <section class="dashboard-content">
+        <div class="wrapper">
+            <div class="sidebar">
+            {% block sidebar %}
+            <ul>
+                <li>
+                <a href="#"><i class="uil uil-user-circle"></i>Profile</a>
+                </li>
+                <li>
+                <a href="#"><i class="uil uil-folder-download"></i>My Folders</a>
+                </li>
+                <li>
+                <a href="#"  id="dash-active-page"><i class="uil uil-cloud-check"></i>Active QR Codes</a>
+                </li>
+                <li >
+                <a href="#"><i class="uil uil-clock"></i>History</a>
+                </li>
+                <li>
+                <a href="#"><i class="uil uil-shield"></i>Change Password</a>
+                </li>
+                <li>
+                <a href="#"><i class="uil uil-question-circle"></i>Help</a>
+                </li>
+                <li>
+                <a href="#" class="delete">Delete Account</a>
+                </li>
+            </ul>
+            {% endblock sidebar %}
+            </div>
+
+
+            {% block specific_content %}
+            {% endblock specific_content%}
+        </div>
+    </section>
+
+
+
+{% block extra_script %}
+{% endblock extra_script %}
+
+{% endblock content %}
+{% block top_footer %}{% endblock top_footer %}
+{% block middle_footer %}{% endblock middle_footer %}

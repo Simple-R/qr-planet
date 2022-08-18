@@ -20,3 +20,8 @@ urlpatterns +=[
     path('learn-more/', views.learn_more, name="learn_more"), 
 ]
 
+
+urlpatterns += [
+    path('dashboard/active-qr', views.dashboard, name='active_qr',)
+]
+

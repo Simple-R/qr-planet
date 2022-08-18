@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css"
+    />
+    <link rel="stylesheet" href="./css/signup.css" />
+    <title>Signup</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="wrapper">
+        <img class="logo" href="#" src="images/logo.svg" alt="logo" />
+        <nav class="navbar">
+          <input type="checkbox" name="" id="nav-toggle" />
+          <div class="nav-links">
+            <ul>
+              <!-- Each page needs to have class="active" for the underline style to apply -->
+              <li><a href="index.html">Home</a></li>
+              <li class="active"><a href="#">Generate QR Code</a></li>
+              <li><a href="#">Why us?</a></li>
+              <li><a href="#">API</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <label for="nav-toggle" class="icon-burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </label>
+        </nav>
+        <div class="nav-button">
+          <button type="submit" class="Secondary-button">
+            <a href="#">Login</a>
+          </button>
+          <button type="submit" class="Primary-button">
+            <a href="#">Get Started</a>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="mobile-logo">
+        <img src="./images/mobile_logo.png" alt="Logo" />
+      </div>
+      <div class="forms">
+        <div class="form login">
+          <p class="title">Sign Up</p>
+          <p class="sub-title">Please fill in this form to create an account</p>
+          <form action="#">
+            <div class="input-field">
+              <input type="text" placeholder="Enter your fullname" required />
+            </div>
+            <div class="input-field">
+              <input type="text" placeholder="Enter your email" required />
+              <i class="uil uil-envelope icon"></i>
+            </div>
+            <div class="input-field">
+              <input
+                type="password"
+                placeholder="Enter your password"
+                required
+              />
+              <i class="uil uil-eye-slash showHidePw"></i>
+            </div>
+            <div class="input-field">
+              <input
+                type="password"
+                placeholder="Confirm your password"
+                required
+              />
+              <i class="uil uil-eye-slash showHidePw"></i>
+            </div>
+
+            <div class="checkbox-text">
+              <div class="checkbox-content">
+                <input type="checkbox" id="logCheck" />
+                <label for="logCheck" class="text"
+                  >I accept the
+                  <a href="#">Terms of use & Privacy Policy</a></label
+                >
+              </div>
+            </div>
+
+            <div class="input-field button">
+              <input type="button" value="Sign Up" required />
+            </div>
+          </form>
+
+          <div class="login-signup">
+            <span class="text"
+              >Already have an account?
+              <a href="#" class="text signup-text">Login</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="bottom_footer">
+        <div class="wrapper">
+          <div class="footer_2">
+            <p><span>2022</span> QR Planet; All Rights Reserved</p>
+            <a href="#">Report</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

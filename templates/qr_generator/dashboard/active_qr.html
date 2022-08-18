@@ -1,0 +1,32 @@
+{% extends 'qr_generator/dashboard/dashboard.html' %}
+{% load static %}
+
+{% load humanize %}
+
+{% block specific_content %}
+
+<div class="container">   
+  {% if user_items %} 
+    <h3>Your Active QRs</h3>
+    
+    
+    <div class="active-qr">
+      {% for qr in user_items %}
+      <figure>
+        <img src="{{ qr.qr_collections_set.qr_code.url }}" alt="">
+        <figcaption>{{ qr.category }}..({{qr.time_created|naturaltime }})</figcaption>
+      </figure>
+      {% endfor %}
+    </div> 
+    
+
+    
+  {% else %}
+    <img src="{% static 'dashboard/images/active_qr.png'%}" alt="Logo" />                    
+    <div class="content">
+        <p>You haven't created any QR codes</p>
+    </div>
+  {% endif %}
+  </div>
+
+{% endblock specific_content %}

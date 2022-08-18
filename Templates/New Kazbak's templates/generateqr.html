@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./JS/generateqr.js"></script>
+    <link rel="stylesheet" href="./css/generateqr.css" />
+
+    <title>Generate QR</title>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <img class="logo" href="#" src="images/logo.svg" alt="logo" />
+        <nav class="navbar">
+          <input type="checkbox" name="" id="nav-toggle" />
+          <div class="nav-links">
+            <ul>
+              <!-- Each page needs to have class="active" for the underline style to apply -->
+              <li><a href="index.html">Home</a></li>
+              <li class="active"><a href="#">Generate QR Code</a></li>
+              <li><a href="#">Why us?</a></li>
+              <li><a href="#">API</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <label for="nav-toggle" class="icon-burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </label>
+        </nav>
+        <div class="nav-button">
+          <button type="submit" class="Secondary-button">
+            <a href="#">Login</a>
+          </button>
+          <button type="submit" class="Primary-button">
+            <a href="#">Get Started</a>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrapper">
+      <div class="container">
+        <div class="box1">
+          <div class="cards" id="menu">
+            <div class="card1">
+              <button type="button" href="#p1">
+                <i class="uil uil-link"></i>URL/Link
+              </button>
+              <button type="button" href="#p2">
+                <i class="uil uil-google-play"></i>App Store
+              </button>
+              <button type="button" href="#p3">
+                <i class="uil uil-file-alt"></i>Text
+              </button>
+              <button type="button">
+                <i class="uil uil-share-alt"></i>Socials
+              </button>
+            </div>
+
+            <div class="card2">
+              <button type="button">
+                <i class="uil uil-envelope-alt"></i>Email
+              </button>
+              <button type="button">
+                <i class="uil uil-paypal"></i>Paypal
+              </button>
+              <button type="button" href="#p4">
+                <i class="uil uil-file-plus"></i>PDF
+              </button>
+              <button type="button" href="#p5">
+                <i class="uil uil-github-alt"></i>Github
+              </button>
+            </div>
+
+            <div class="card3">
+              <button type="button">
+                <i class="uil uil-users-alt"></i>Vcard
+              </button>
+              <button type="button" href="#p7">
+                <i class="uil uil-dollar-alt"></i>Bank details
+              </button>
+              <button type="button">
+                <i class="uil uil-image-v"></i>Image
+              </button>
+              <button type="button">
+                <i class="uil uil-whatsapp"></i>Whatsapp
+              </button>
+            </div>
+
+            <div class="card4">
+              <button type="button" href="#p8">
+                <i class="uil uil-phone-volume"></i>Phone
+              </button>
+              <button type="button">
+                <i class="uil uil-bitcoin-circle"></i>Bitcoin
+              </button>
+              <button type="button"><i class="uil uil-music"></i>Music</button>
+              <button type="button"><i class="uil uil-wifi"></i>Wifi</button>
+            </div>
+
+            <div class="card5">
+              <button type="button" href="#p6">
+                <i class="uil uil-video"></i>Zoom
+              </button>
+              <button type="button" href="#p9">
+                <i class="uil uil-favorite"></i>Rating
+              </button>
+              <button type="button">
+                <i class="uil uil-calender"></i>Event
+              </button>
+              <button type="button">
+                <i class="uil uil-location-point"></i>Location
+              </button>
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="page active" id="p1">
+              <!-- <section id="url"> -->
+              <p class="title">Submit URL/Link</p>
+              <input type="text" placeholder="Input URL/Link" />
+              <!-- </section> -->
+            </div>
+
+            <div class="page" id="p2">
+              <!-- <section id="store"> -->
+              <p class="title">Submit URL/Link</p>
+              <input type="text" placeholder="Enter Link to Application" />
+              <!-- </section> -->
+            </div>
+            <div class="page" id="p3">
+              <!-- <section id="store"> -->
+              <p class="title">Text Display</p>
+              <textarea name="" id="message"></textarea>
+              <!-- </section> -->
+            </div>
+            <div class="page" id="p4">
+              <!-- <section id="store"> -->
+              <p class="title">Text Display</p>
+              <input type="text" placeholder="Input PDF Link" />
+              <textarea name="" id="message">Enter Message</textarea>
+              <!-- </section> -->
+            </div>
+            <div class="page" id="p5">
+              <!-- <section id="store"> -->
+              <p class="title">Github</p>
+              <input type="text" placeholder="Input your github profile" />
+              <!-- </section> -->
+            </div>
+            <div class="page" id="p6">
+              <!-- <section id="store"> -->
+              <p class="title">Github</p>
+              <input type="text" placeholder="Enter Zoom Link" />
+              <!-- </section> -->
+            </div>
+            <div class="page" id="p7">
+              <!-- <section id="store"> -->
+              <p class="title">Bank Details</p>
+              <input type="text" placeholder="Bank name" />
+              <input type="text" placeholder="Full Name" />
+              <input type="text" placeholder="Account Number" />
+              <!-- </section> -->
+            </div>
+            <div class="page" id="p8">
+              <!-- <section id="store"> -->
+              <p class="title">Phone Details</p>
+              <input type="number" placeholder="Country Code" />
+              <input type="number" placeholder="Phone Number" />
+              <!-- </section> -->
+            </div>
+            <div class="page" id="p9">
+              <!-- <section id="store"> -->
+              <p class="title">Ratings</p>
+              <input type="number" placeholder="Enter ratings page link" />
+              <!-- </section> -->
+            </div>
+          </div>
+        </div>
+        <div class="box2">
+          <div class="qrimage">
+            <img src="./images/qrcodeimg.png" alt="qr code image" />
+          </div>
+
+          <button class="btn1">Generate QR Code</button>
+          <button class="btn2"><i class="uil uil-share-alt"></i>Share</button>
+          <button class="btn2"><i class="uil uil-import"></i>Download</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="bottom_footer">
+        <div class="wrapper">
+          <div class="footer_2">
+            <p><span>2022</span> QR Planet; All Rights Reserved</p>
+            <a href="#">Report</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

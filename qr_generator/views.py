@@ -11,11 +11,9 @@ from django.core.mail import send_mail
 from django.contrib import messages
 
 from .forms import ContactUsForm 
-import qrcode
 from PIL import Image
 from django.conf import settings
 from qr_gen_project.settings import  MEDIA_ROOT
-import datetime
 from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth import get_user_model
@@ -32,11 +30,25 @@ import mimetypes
 import os
 from django.http.response import HttpResponse
 from django.shortcuts import render
-import qrcode
-
-import qrcode.image.svg
 
 User = get_user_model()
+
+@login_required(login_url="/qr-gen/accounts/login")
+def dashboard(request):
+    template = 'qr_generator/dashboard/active_qr.html'
+    context = {}
+
+    try:
+        user_items = UserCollection.objects.filter(qr_user=request.user)
+        user_items = user_items.qr_co
+        context['user_items'] = user_items
+    
+    except QRCollection.DoesNotExist as ex:
+        messages.info(request, "No collection available")
+
+
+    return render(request, template, context)
+
 
 def index(request):
     context = {}
