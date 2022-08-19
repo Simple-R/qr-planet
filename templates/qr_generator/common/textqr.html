@@ -187,7 +187,7 @@
           
           {% if qr_image %}
           <div class="qrimage">
-            <img src="{{ qr_image.qr_code.url }}" name=img value="{{ qr_image }}" alt="qr code image" />
+            <img src="{{ qr_image.qr_code.url }}" name=img alt="qr code image" />
           {# Then save #}
 
           <button type="submit" class="btn2"><i class="uil uil-import"></i><a href={% url 'qr_generator:save_qr' id=qr_image.id %}>Save</a></button>

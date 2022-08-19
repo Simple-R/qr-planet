@@ -32,32 +32,33 @@ def index(request):
 
 
 # Registers a new user
-#@unauthenticated_user
+@unauthenticated_user
 def register(request):
-
 	template = 'accounts/register.html'
 		
-	if request.method=='POST':
-		form = CreateUserForm(request.POST)
-		if form.is_valid():
-			form.save()
-			email = form.cleaned_data.get('email')
-			password = form.cleaned_data.get('password1')
-			user = authenticate(request, email=email, password=password)
+	if request.method == "POST":
+		username = request.POST.get("username")
+		email = request.POST.get("email")
+		password = request.POST.get("password")
+		confirm_password = request.POST.get("confirm_password")
 		
-			login(request, get_user_model())
-			messages.success(request," Account was Created for "+email)
-			return redirect('qr_generator:home')
-		
-		else:
-			messages.error(request, 'Incorrect credentials')
+		if password != confirm_password:
+			messages.warning(request, "Passwords do not match!")
+			return redirect("accounts:register")
 
-		
-	form = CreateUserForm()
-			
-	context = {'form':form}
-	return render(request, template, context)
+		if User.objects.filter(email=email).exists():
+			messages.info(request, "An account with that email already exists")
+			return redirect("accounts:register")
 
+		user = User.objects.create_user(username=username, email=email, password=password)
+		user.set_password(password)
+		messages.success(request, f'Account created for {username.title()}')
+
+		user.save()
+		login(request, user)
+		return redirect("qr_generator:home")
+
+	return render(request, template)
 
 
 

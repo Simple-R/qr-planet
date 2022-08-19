@@ -84,7 +84,7 @@ class QRCollection(models.Model):
         super().save(*args,**kwargs)
 
     def __str__(self):
-        return f'{self.qr_user.username}\'s {self.category}'
+        return f'{self.qr_user.username}\'s {self.category} {self.id}'
 
 
     class Meta:

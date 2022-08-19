@@ -5,11 +5,9 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('QR_SECRET_KEY')
+SECRET_KEY = os.environ.get('QR_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -76,12 +74,16 @@ WSGI_APPLICATION = 'qr_gen_project.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default':os.environ.get('DATABASE_URL'),
+
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -117,10 +119,10 @@ USE_TZ = True
 
 # Email Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL')
-EMAIL_HOST = os.getenv('EMAIL_HOST')
-QR_EMAIL_HOST_USER = os.getenv('QR_EMAIL_HOST_USER')
-QR_EMAIL_HOST_PASSWORD = os.getenv('QR_EMAIL_HOST_PASSWORD')
+EMAIL_USE_SSL = os.environ.get('EMAIL_USE_SSL')
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+QR_EMAIL_HOST_USER = os.environ.get('QR_EMAIL_HOST_USER')
+QR_EMAIL_HOST_PASSWORD = os.environ.get('QR_EMAIL_HOST_PASSWORD')
 EMAIL_PORT = '465'
 
 # Static files (CSS, JavaScript, Images)
@@ -130,7 +132,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), ) 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/media/' 
+STATICFILES_STORAGE ='whitenoise.storage.CompressedManifestStaticFilesStorage' 
+
+MEDIA_URL ='/media/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Thousand Separator
@@ -149,7 +153,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # API config
 CORS_ORIGIN_ALLOW_ALL = True # for now, will be changed later
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8000', 'http://QR-gen.eba-n3fpcnmc.us-west-2.elasticbeanstalk.com*'
+    'http://localhost:8000', 'http://QR-gen.eba-n3fpcnmc.us-west-2.elasticbeanstalk.com*', "http://qrplanetgen.herokuapp.com", 'http://*', 'https://*'
 )
 
 

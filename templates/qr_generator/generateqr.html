@@ -194,9 +194,9 @@
         <div class="box2">
 
           
-          {% if qr %}
+          {% if qr_image %}
           <div class="qrimage">
-            <img src="{{ qr.qr_code.url }}" name=img value="{{ qr_image }}" alt="qr code image" />
+            <img src="{{ qr_image.qr_code.url }}" name=img value="{{ qr_image.qr_code.url }}" alt="qr code image" />
           </div>
 
           <form style="display:none;" action="{% url 'qr_generator:save_qr' %}" method="post" id="save_btn">

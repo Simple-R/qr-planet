@@ -131,9 +131,7 @@ def generate_qr(request):
                 qr_info = 'Your Text is: ' + request.POST['text'],
                 )
 
-            ls = QRCollection.objects.all().order_by('-id')[0]
-            context = {'qr_image':ls}
-
+            context['qr_image'] = QRCollection.objects.filter(qr_user=request.user).order_by('-id')[0]
             return render(request, 'qr_generator/common/url_qr.html', context)
 
         # if Url is selected
@@ -144,9 +142,8 @@ def generate_qr(request):
                 qr_info = 'Your Link is: ' + request.POST['url-link'],
                 )
 
-            ls = QRCollection.objects.all().order_by('-id')[0]
-            context = {'qr_image':ls}
-
+            
+            context['qr_image'] = QRCollection.objects.filter(qr_user=request.user).order_by('-id')[0]
             return render(request, 'qr_generator/common/url_qr.html', context)
 
 
@@ -162,6 +159,8 @@ def generate_qr(request):
             context = {'qr_image':ls}
 
             return render(request, 'qr_generator/common/url_qr.html', context)
+
+        
     
     return render(request, template, context)
 

@@ -1,4 +1,4 @@
-
+from django.views.static import serve
 from django.contrib import admin
 from django.urls import path
 
@@ -7,9 +7,8 @@ urlpatterns = [
 ]
 # qr_gen_project/settings.py
 
-from re import M
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -54,6 +53,9 @@ urlpatterns += [
 
 urlpatterns +=[
     path('reset_complete/', auth_views.PasswordResetCompleteView.as_view(template_name='accounts/password/password_reset_complete.html'), name='password_reset_complete'),      
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += [re_path(r'^media/(?P<path>.*)$', serve, {'document_root':settings.MEDIA_ROOT, }), ]
 
 handler404 = "qr_generator.views.page_not_found"

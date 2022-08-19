@@ -9,14 +9,6 @@ class CreateUserForm(UserCreationForm):
         model = QRUser
         fields = ('username', 'email', 'password1', 'password2')
        
-
-    # def clean(self):
-    #     value = self.cleaned_data['fullname']
-    #     if not value:
-    #         return 'Name Empty'
-    #     # Do some cleaning later
-    #     return value
-
     def save(self, commit=True):
         user = super(CreateUserForm, self).save(commit=False)
         user.email = self.cleaned_data['email']

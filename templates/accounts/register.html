@@ -21,24 +21,26 @@
       <form action="{% url 'accounts:register'%}" method="post">
         {% csrf_token %}
         <div class="input-field">
-          {{ form.username }}
+          <input type="text" name="username" id="uname" placeholder="Enter a Username" required>
         </div>
+
         <div class="input-field">
-          {{form.email}}
+          <input type="email" name="email" id="email" placeholder="Enter an Email" required>
           <i class="uil uil-envelope icon"></i>
         </div>
         <div class="input-field">
-          {{form.password1}}
+          <input type="password" name="password" id="pword" required>
           <i class="uil uil-eye-slash showHidePw"></i>
         </div>
         <div class="input-field">
-          {{form.password2}}
+          <input type="password" name="confirm_password" id="c-password" required>
           <i class="uil uil-eye-slash showHidePw"></i>
         </div>
 
         <div class="checkbox-text">
           <div class="checkbox-content">
-            <input type="checkbox" id="logCheck" />
+            <input type="checkbox" id="logCheck" name="terms
+            " required />
             <label for="logCheck" class="text"
               >I accept the
               <a href="#">Terms of use & Privacy Policy</a></label
@@ -64,7 +66,7 @@
 <script src="{% static 'accounts/js/custom/validate_registration.js' %}"></script>
 <script>
     var form_fields = document.getElementsByTagName("input");
-    form_fields[2].placeholder = "Enter a Username..";
+    form_fields[1].placeholder = "Enter a Username..";
     form_fields[3].placeholder = "Enter your Email..";
     form_fields[4].placeholder = "Enter your password...";
     form_fields[5].placeholder = "Confirm your password...";
