@@ -1,29 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap");
-
-:root {
-    --secondary-color-200: #d0dff6;
-    --success-color: #10a11f;
-    --error-color: #d90f0f;
-    --warning-color: #fff849;
-    --white: #fffcfc;
-    --black-for-texts: #333131;
-    --white-2: #fcfeff;
-    --secondary-color-100: #e9eff8;
-    --secondary-color-300: #87a1c9;
-    --secondary-color-400: #6282b2;
-    --grey-700: #424447;
-    --grey-600: #4f5155;
-    --grey-500: #6c6e71;
-    --grey-400: #8a8b8e;
-    --grey-200: #c4c5c6;
-    --primary-color-300: #082553;
-    --primary-color-200: #092c64;
-    --primary-color-100: #adb9cb;
-    --gc-600: #868b8f;
-    --wc-1: #fffcfc;
-    --desktop-background: url(../images/homepage-bg.svg);
-}
 
 * {
     box-sizing: border-box;
@@ -50,9 +24,14 @@ a {
 }
 
 header {
+    /* position: absolute; */
     background-color: var(--white);
     border-bottom: 1px solid var(--grey-400);
-    margin-bottom: 30px;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    /* margin-bottom: 30px; */
 }
 
 header .wrapper {
@@ -64,13 +43,16 @@ header .wrapper {
 }
 
 .logo {
-    float: left;
     cursor: pointer;
     max-width: 200px;
 }
 
-nav {
-    float: right;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
 }
 
 .nav-links {
@@ -87,31 +69,27 @@ nav {
 }
 
 .nav-links li a {
-    display: block;
+    display: inline-block;
     text-decoration: none;
     font-size: 16px;
     padding: 5px 10px;
     margin: 0 10px;
     color: var(--primary-color-200);
+    position: relative;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 100%;
-}
-
-
-.nav-links li a:active {
-    border-bottom: 2px solid var(--primary-color-200);
+.nav-links .active a {
+    font-weight: bold;
+    color: var(--secondary-color-400);
+    border-bottom: 2px solid var(--secondary-color-400);
 }
 
 .nav-links li a:hover {
-    border-bottom: 2px solid var(--secondary-color-400);
+    color: var(--secondary-color-400);
+    font-weight: bold;
     transition: all .5s ease;
 }
+
 
 /* Nav for mobile view */
 
@@ -123,7 +101,7 @@ nav {
 nav .icon-burger {
     position: absolute;
     left: 5%;
-    top: 3%;
+    top: 15%;
     display: none;
     transform: translateY(50%);
 }
@@ -164,11 +142,13 @@ button a {
 
 .Primary-button:hover {
     background-color: var(--secondary-color-400);
+    transition: all .5s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.25);
 }
 
 .Secondary-button {
     padding: 6px 32px;
-    margin-right: 20px;
+    margin-right: 10px;
     border-radius: 8px;
     border: solid 1px var(--grey-600);
     background-color: transparent;
@@ -181,11 +161,13 @@ button a {
 
 .Secondary-button:hover {
     background-color: var(--grey-200);
+    transition: all .5s ease-in-out;
 }
 
 
 .btn-2 {
     padding: 6px 32px;
+    margin-left: 5px;
     border-radius: 8px;
     border: solid 1px var(--primary-color-300);
     color: var(--primary-color-300);
@@ -200,15 +182,15 @@ button a {
     background-color: var(--secondary-color-200);
 }
 
+/* End of header and nav desktop view */
 
 /* Login Field */
 
-.container{    
-    max-width: 40%;    
-    padding: 50px 20px;
+.container{  
+    max-width: 40%;
+    min-height: 100vh;      
+    padding: 200px 0px;    
     margin: 0 auto;    
-    border-radius: 8px;
-    border: solid 1px var(--secondary-color-200);    
 }
 
 .container .mobile-logo{
@@ -216,7 +198,9 @@ button a {
 }
 
 .container .forms{
-    padding: 10px;
+    padding: 30px;
+    border-radius: 8px;
+    border: solid 1px var(--secondary-color-200);
 }
 
 .container .form .title{    
@@ -254,6 +238,7 @@ button a {
 
 .input-field input:is(:focus, :valid){
     background-color: #e9e9e9;
+    outline: var(--success-color)
 }
 
 .input-field i{    
@@ -335,6 +320,11 @@ button a {
 
 /* Bottom Footer */
 
+footer{
+    position: relative;
+    bottom: 0;
+}
+
 .bottom_footer {
     background-color: var(--primary-color-300);
     padding: 15px 0;
@@ -364,15 +354,15 @@ button a {
 }
 
 
-@media screen and (max-width: 768px) {
-    body{
+@media screen and (max-width: 841px) {
+    body {
         background-image: none;
         background-color: #f1f1f1;
     }
 
     .logo {
         float: none;
-        margin-left: 60px;
+        margin: auto;
     }
 
     .nav-links {
@@ -383,23 +373,25 @@ button a {
         right: 0;
         top: 100px;
         bottom: 100%;
-        width: auto;        
+        width: auto;
+        /* flex-direction: column; */
         overflow: hidden;
         background-color: var(--secondary-color-200);
         transition: all .5s ease-in-out
     }
 
     .nav-links ul {
-        flex-direction: column;   
+        flex-direction: column;
         width: 100%;
         text-align: center;
     }
 
-    .nav-links li a{
+    .nav-links li a {
         font-weight: bolder;
         margin: 10px 0;
         padding: 20px 0;
     }
+
 
     .nav-links li a:hover {
         border: none;
@@ -435,7 +427,14 @@ button a {
         opacity: 0;
     }
 
-    .navbar .wrapper{
+    .nav-button .Secondary-button {
+        display: none;
+    }
+
+    .navbar .wrapper,
+    .middle_footer .wrapper,
+    .middle_footer .footer_info,
+    .middle_footer .md_footer_info {
         display: block;
         padding: 10px 20px;
         text-align: center;
@@ -445,12 +444,16 @@ button a {
         margin-right: 0;
     }
 
-    .container{
-        max-width: 100%;
-        border: none;
-        padding: 50px 20px;
+
+    .container {
+        padding-bottom: 5px;
+        max-width: 100%;    
     }
 
+    .container .forms {    
+        border:none;        
+    }
+    
     .container .mobile-logo {
         max-width: 30% ;
         padding: 50px 0;
