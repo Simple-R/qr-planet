@@ -156,7 +156,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # API config
 CORS_ORIGIN_ALLOW_ALL = True # for now, will be changed later
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8000', 'http://QR-gen.eba-n3fpcnmc.us-west-2.elasticbeanstalk.com*', "http://qrplanetgen.herokuapp.com", 'http://*', 'https://*'
+    'http://localhost:8000', 'http://QR-gen.eba-n3fpcnmc.us-west-2.elasticbeanstalk.com*', "http://qrplanetgen.herokuapp.com", 'https://qrplanetgen.herokuapp.com'
 )
 
 

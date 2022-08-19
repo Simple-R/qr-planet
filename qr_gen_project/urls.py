@@ -37,7 +37,7 @@ schema_view = get_schema_view(
 
 
 urlpatterns = [
-   path('qr-gen/api/documentation/', schema_view.with_ui('swagger', cache_timeout=0), name='docs'),
+   path('api/documentation/', schema_view.with_ui('swagger', cache_timeout=0), name='docs'),
    path('qr-gen/api/redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
    path('qr-gen/api/', include('api.urls'), ),
 ]

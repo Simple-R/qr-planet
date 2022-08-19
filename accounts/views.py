@@ -75,7 +75,7 @@ def login_view(request):
 
 		if user is not None:
 			login(request, user)
-			messages.success(request, f"You are now logged in as {request.user.username}.")
+			messages.success(request, f"You are now logged in as {request.user.username.title()}.")
 			return redirect('qr_generator:home',) # pk=str(request.user.id)
 		
 		else: 

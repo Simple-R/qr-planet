@@ -11,7 +11,7 @@ urlpatterns = [
 
 urlpatterns += [
     path('<str:category>', views.QRCategoryView.as_view(), name='qr_category'), # Fetch all user QR from a category
-    path('<str:category>/<int:pk>', views.QROneCategoryView.as_view(), name='get_one'), # Fetch one user QR from a category
+    # path('<str:category>/<int:pk>', views.QROneCategoryView.as_view(), name='get_one'), # Fetch one user QR from a category
     path('', views.QRAPIView.as_view(), name='all_user_qr'), # Fetch all user QR
 ]
 

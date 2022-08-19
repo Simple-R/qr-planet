@@ -106,21 +106,21 @@ class DeleteQRAPIView(RetrieveDestroyAPIView):
         )
         
     
-class QROneCategoryView(RetrieveDestroyAPIView):
-    serializer_class = QRCollectionSerializer
-    permission_classes =(IsAuthenticated,)
+# class QROneCategoryView(RetrieveDestroyAPIView):
+#     serializer_class = QRCollectionSerializer
+#     permission_classes =(IsAuthenticated,)
 
-    def get_queryset(self):
+#     def get_queryset(self):
 
-        if self.kwargs['category']:
-            if self.kwargs['pk']:
-                try:
-                    qr = QRCollection.objects.filter(
-                    qr_user=self.request.user,
-                    category=self.kwargs['category'],
-                    id=self.kwargs['pk'],
-                    )
-                except TypeError as ex:
-                    return {'message':"error"}
+#         if self.kwargs['category']:
+#             if self.kwargs['pk']:
+#                 try:
+#                     qr = QRCollection.objects.filter(
+#                     qr_user=self.request.user,
+#                     category=self.kwargs['category'],
+#                     id=self.kwargs['pk'],
+#                     )
+#                 except TypeError as ex:
+#                     return {'message':"error"}
 
-            return qr
+#             return qr
