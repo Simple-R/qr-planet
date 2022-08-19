@@ -218,7 +218,9 @@
 
           
             {% else %}
-            <img src="{% static 'qr_generator/images/qrcodeimg.png'%}" alt="qr code image" width="70%" height="60%" title="This is A SAMPLE"/>
+            <div class="qrimage">
+              <img src="{% static 'qr_generator/images/qrcodeimg.png'%}" alt="qr code image" title="This is A SAMPLE"/>
+            </div>
             
             
           {% endif %}
