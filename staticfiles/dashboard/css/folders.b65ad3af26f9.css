@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
     padding: 0;
@@ -6,7 +5,7 @@
 }
 
 body {
-    background-image: url(../images/homepage-bg.svg);
+    background-image: url("../../accounts/images/homepage-bg.ad62f58bc988.svg");
     background-size: cover;
     font-family: "Outfit", sans-serif;
     font-size: 14px;
@@ -167,7 +166,6 @@ button a {
 
 .btn-2 {
     padding: 6px 32px;
-    margin-left: 5px;
     border-radius: 8px;
     border: solid 1px var(--primary-color-300);
     color: var(--primary-color-300);
@@ -184,143 +182,101 @@ button a {
 
 /* End of header and nav desktop view */
 
-/* Login Field */
 
-.container{  
-    max-width: 40%;
-    min-height: 100vh;      
-    padding: 200px 0px;    
-    margin: 0 auto;    
-}
+/* Sidebar */
 
-.container .mobile-logo{
-    display: none;
-}
-
-.container .forms{
-    padding: 30px;
-    border-radius: 8px;
-    border: solid 1px var(--secondary-color-200);
-}
-
-.container .form .title{    
-    font-size: 37px;
-    font-weight: 600;
-    text-align: center;
-    color: var(--primary-color-300);    
-}
-
-.container .form .sub-title{    
-    color: var(--grey-600);
-    font-size: 18px;
-    font-weight: 600;
-    text-align: center;    
-}
-
-.form .input-field{    
-    position: relative;
-    height: 50px;
-    width: 100%;
-    margin-top: 30px;
-}
-
-.input-field input{
-    font-family: "Outfit", sans-serif;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    font-size: 16px;
-    padding: 0 8px;
-    border-radius: 8px;
-    border: solid 1px var(--secondary-color-200);
-    transition: all 0.3s ease;    
-}  
-
-.input-field input:is(:focus, :valid){
-    background-color: #e9e9e9;
-    outline: var(--success-color)
-}
-
-.input-field i{    
-    position: relative;
-    color: var(--grey-400);
-    float: right;
-    top: 50%;
-    left: 0;    
-    padding: 0 15px;
-    cursor: pointer;
-    transform: translateY(-50%);
-}
-
-.input-field input:is(:focus, :valid) ~ i{
-    color: var(--primary-color-300);
-}
-
-.input-field i.showHidePw{
-    right: 0;
-}
-
-.form .checkbox-text{
+.dashboard-content .wrapper {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
+    align-items: flex-start;
+    min-height: 100vh;
 }
 
-.checkbox-text .checkbox-content{
-    display: flex;
-    align-items: center;
+.sidebar {
+    position: sticky;
+    padding: 120px 0;
+    width: 30%;
+    min-height: 100vh;
+    border: solid 1px var(--secondary-color-300);
 }
 
-.checkbox-content input{
-    margin: 0 8px 4px;
-    accent-color: var(--primary-color-200);
-}
-
-.form .text{
-    color: var(--secondary-color-400);
-    font-size: 14px;
-}
-
-.form a.text{
-    color: var(--primary-color-200);
+.sidebar ul a {
     text-decoration: none;
-}
-.form a:hover{
-    text-decoration: underline;
-}
-
-.form .button{
-    margin-top: 25px; 
-}
-.form .button input{
-    border: none;
-    color: #fff;
-    font-size: 17px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    border-radius: 6px;
-    background-color: var(--primary-color-300);
-    cursor: pointer;
-    transition: all 0.3 ease;
+    display: block;
+    line-height: 60px;
+    font-size: 16px;
+    color: var(--black-for-texts);
+    padding-left: 20px;
+    box-sizing: border-box;
+    transition: .4s;
 }
 
-.button input:hover{
-    background-color: var(--primary-color-200);
+.sidebar li {
+    list-style: none;
+    color: var(--black-for-texts);
 }
 
-.form .login-signup {
-    margin-top: 30px;
-    text-align: center;
+.sidebar .delete {
+    margin-top: 50%;
+    color: var(--error-color);
 }
 
-.login-signup .text{
-    font-size: 17px;
+.sidebar ul li:hover a:not(.delete, #dash-active-page) {
+    padding-left: 50px;
+    background-color: var(--secondary-color-400);
+    color: var(--wc-1);
 }
+
+
+.sidebar ul li:hover .delete {
+    padding-left: 50px;
+    background-color: var(--error-color);
+    color: var(--white);
+}
+
+
+.sidebar ul li:hover i {
+    color: var(--wc-1);
+}
+
+.sidebar ul a i {
+    margin-right: 7px;
+    color: var(--black-for-texts);
+}
+
+#dash-active-page,
+#dash-active-page i {
+    background-color: var(--secondary-color-400);
+    color: var(--white-2);
+}
+
+/* end of side bar */
+
+
+.container {
+    min-width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 0;
+}
+
+.container img {
+    max-height: 250px;
+    margin: 30px 0;
+}
+
+.container p {
+    margin: 20px;
+    color: var(--grey-400);
+    font-size: 16px;
+}
+
 
 /* Bottom Footer */
 
-footer{
+footer {
     position: relative;
     bottom: 0;
 }
@@ -354,10 +310,11 @@ footer{
 }
 
 
+
 @media screen and (max-width: 841px) {
     body {
         background-image: none;
-        background-color: #f1f1f1;
+        background-color: #fff;
     }
 
     .logo {
@@ -444,21 +401,87 @@ footer{
         margin-right: 0;
     }
 
+    .dashboard-content .wrapper {
+        display: block;
+    }
+
+    /* Sidebar */
+
+    .sidebar {
+        position: static;
+        margin: 0;
+        width: 100%;
+        min-height: auto;
+        padding: 120px 0 20px;
+        border: none;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar ul a {
+        padding: 5px 20px;
+        margin: 3px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        font-size: 12px;
+        line-height: 2rem;
+        background-color: var(--primary-color-100);
+        color: var(--black-for-texts);
+        transition: .4s;
+    }
+
+    .sidebar ul a .delete {
+        background-color: var(--error-color);
+    }
+
+    .sidebar ul li:hover a:not(.delete, #dash-active-page) {
+        padding-left: 5px;
+    }
+
+    .sidebar .delete {
+        margin-top: 3px;
+        padding: 3px 55px;
+        background-color: transparent;
+        border: var(--error-color) solid 1px;
+        color: var(--error-color);
+    }
+
+
+    .sidebar ul a i {
+        display: none;
+    }
+
+    .sidebar ul li:hover i {
+        display: none;
+    }
+
+    /* End of sidebar */
 
     .container {
-        padding-bottom: 5px;
-        max-width: 100%;    
+        width: 100%;
+        border: none;
+        margin: 0 auto;
+        padding: 0 20px;
     }
 
-    .container .forms {    
-        border:none;        
+    .container {
+        width: 100%;
+        min-height: 60vh;
+        border: none;
+        padding: 50px 20px;
     }
-    
-    .container .mobile-logo {
-        max-width: 30% ;
-        padding: 50px 0;
+
+    .container .history-img {
+        max-width: 50%;
+        padding: 0 0 30px 0;
         margin: 0 auto;
-        display: grid;
+        display: block;
         place-self: center;
     }
 }
