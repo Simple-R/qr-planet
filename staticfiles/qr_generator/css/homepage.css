@@ -10,6 +10,7 @@ body {
     background-size: cover;
     font-family: "Outfit", sans-serif;
     font-size: 14px;
+    width: 100%;
 }
 
 
@@ -607,11 +608,17 @@ a {
     text-decoration: none;
 }
 
+@media screen and (max-width: 450px) {
+    .hero-bg{
+        width: 100%;
+    }
+}
+
 
 @media screen and (max-width: 841px) {
     .logo {
         float: none;        
-        margin: auto;
+        margin: 0;
     }
 
     .nav-links {

@@ -1,0 +1,378 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'base/css/swiper-bundle.min.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/about_us.css' %}">
+    <style>
+        .description{
+            color: rgb(109, 84, 22);
+        }
+    </style>
+{% endblock style %}
+
+{% block title %}{{ block.super }}&VerticalBar;&nbsp;About&nbsp;Us{% endblock title %}
+{% block content %}
+   
+    <div class="container">
+        <!-- First section -->
+        <div class="hero">
+            <h3>About Us</h3>
+            <p>Quickly and easily generate secure,dynamic,trackable<br/>
+                QR codes to optimize your engagement levels for<br/>
+                personal or business needs
+            </p>
+        </div>
+
+        <!-- Second section -->
+        <div class="grid">
+            <div class="box">
+                <img src="{% static 'base/images/contributors/table.png'%}" alt="display">
+            </div>
+
+            <div class="content">
+                <h4>More About Us</h4>
+                <p>QR Planet was created in 2022, with the<br/>
+                    sole purpose of allowing users quickly<br/>
+                    and easily generate secure, dynamic<br/>
+                    trackable qr codes.
+                </p>
+            </div>
+        </div>
+
+        <div class="our-team">
+            <h2 class="team-item">Our team</h2>
+            <h3 class="team-desc"><a href="https://qrplanetgen.herokuapp.com">QR Planet</a> is powered by a highly efficient and productive team of professionals</h3>
+        </div>
+
+        <!-- third section -->
+        <section class="container"> 
+            <button class="pre-btn"><div class="swiper-button-next"></div></button>
+            <button class="nxt-btn"><div class="swiper-button-next"></div></button>
+            <div class="card-container">
+                <div class="card swiper-card">
+                                <div class="image-content">
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/topey.jpg' %}" alt="Tope Picture" class="card-img">
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h4 class="name">Yusuff Temitope</h4>
+                                    <h5 class="name">[Temitope_OX]</h5>
+                                    <p class="description">Team Lead</p>
+                                    <p class="description">Software Developer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                <div class=" card swiper-card">
+                    <div class="image-content">
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/bhorie.png' %}" alt="Bhorie Picture" class="card-img">
+                                        
+                                    </div>
+                                </div>
+            
+                                <div class="card-content">
+                                    <h4 class="name">Odekunle Toluwabori</h4>
+                                    <h5 class="name">[Bhorie]</h5>
+                                    <p class="description">Assistant Team Lead</p>
+                                    <p class="description">Product Designer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                </div>
+                <div class=" card swiper-card">
+                    <div class="image-content">
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/nick.jpg' %}" alt="Nick Picture" class="card-img">
+                                        
+                                    </div>
+                                </div>
+            
+                                <div class="card-content">
+                                    <h4 class="name">Wisdom Emmanuel</h4>
+                                    <h5 class="name">[SimpleNick]</h5>
+                                    <p class="description">Engineering Lead</p>
+                                    <p class="description">Software Developer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                </div>
+                <div class="card swiper-card">
+                    <div class="image-content">
+                                    
+            
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/gbemi.jpg' %}" alt="Gbemi Picture" class="card-img">
+                                        
+                                    </div>
+                                </div>
+            
+                                <div class="card-content">
+                                    <h4 class="name">Aseperi Gbemisoke</h4>
+                                    <p class="description">Product Lead</p>
+                                    <p class="description">Product Designer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                </div>
+                <div class="card swiper-card">
+                    <div class="image-content">
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/elizzy.jpg' %}" alt="Elizzy Picture" class="card-img">
+                                        
+                                    </div>
+                                </div>
+            
+                                <div class="card-content">
+                                    <h4 class="name">Elizabeth Ogunmola</h4>
+                                    <h5 class="name">[Elizzy]</h5>
+                                    <p class="description">Software Developer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                </div>
+                <div class="card swiper-card">
+                    <div class="image-content">
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/kazbah.jpg' %}" alt="Kazbak Picture" class="card-img">
+                                        
+                                    </div>
+                                </div>
+            
+                                <div class="card-content">
+                                    <h4 class="name">Kazeem Bakare</h4>
+                                    <h5 class="name">[Kazbak]</h5>
+                                    <p class="description">Software Developer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                </div>
+                <div class="card swiper-card">
+                    <div class="image-content">
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/ononero.png' %}" alt="Ononero Picture" class="card-img">
+                                        
+                                    </div>
+                                </div>
+            
+                                <div class="card-content">
+                                    <h4 class="name">Ononero Onoriedo</h4>
+                                    <p class="description">Product Designer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                </div>
+                <div class="card swiper-card">
+                    <div class="image-content">
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/ifeoma.jpg' %}" alt="Ifeoma Picture" class="card-img">
+                                        
+                                    </div>
+                                </div>
+            
+                                <div class="card-content">
+                                    <h4 class="name">Ifeoma Sylvia Dike</h4>
+                                    <p class="description">Product Designer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                </div>
+                <div class="card swiper-card">
+                    <div class="image-content">
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/avong.jpg' %}" alt="Avong Picture" class="card-img">
+                                        
+                                    </div>
+                                </div>
+            
+                                <div class="card-content">
+                                    <h4 class="name">Avong Emmanuel John</h4>
+                                    <p class="description">Software Developer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                </div>
+                <div class="card swiper-card">
+                    <div class="image-content">
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/ndafo.jpg' %}" alt="Ndafohamba Picture" class="card-img">
+                                        
+                                    </div>
+                                </div>
+            
+                                <div class="card-content">
+                                    <h4 class="name">Ndafohamba Shadjanale</h4>
+                                    <p class="description">Product Designer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                </div>
+                <div class="card swiper-card">
+                                <div class="image-content">
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/ifeoluwa.jpg' %}" alt="Ifeoluwa Picture" class="card-img">
+                                        
+                                    </div>
+                                </div>
+            
+                                <div class="card-content">
+                                    <h4 class="name">Eluwole Eninlaloluwa</h4>
+                                    <h5 class="name">[Blitz]</h5>
+                                    <p class="description">Software Developer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                </div>
+                <div class="card swiper-card">
+                    <div class="image-content">
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/missing.svg' %}" alt="Tomiwa Picture" class="card-img">
+                                        
+                                    </div>
+                                </div>
+            
+                                <div class="card-content">
+                                    <h4 class="name">Ibrahim Tomiwa Arike</h4>
+                                    <p class="description">Product Designer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                </div>
+                <div class="card swiper-card">
+                <div class="image-content">
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/missing.svg' %}" alt="John Picture" class="card-img">
+                                        
+                                    </div>
+                                </div>
+            
+                                <div class="card-content">
+                                    <h4 class="name">John Damisa Raji</h4>
+                                    <p class="description">Product Designer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                </div>
+                <div class="card swiper-card">
+                <div class="image-content">
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/missing.svg' %}" alt="Joshua Picture" class="card-img">
+                                        
+                                    </div>
+                                </div>
+            
+                                <div class="card-content">
+                                    <h4 class="name">Joshua Oladoye-Sule</h4>
+                                    <p class="description">Product Designer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                </div>
+                <div class="card swiper-card">
+                <div class="image-content">
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/missing.svg' %}" alt="Ruth Picture" class="card-img">
+                                        
+                                    </div>
+                                </div>
+            
+                                <div class="card-content">
+                                    <h4 class="name">Oladejo Ruth Pelumi</h4>
+                                    <p class="description">Product Designer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                </div>
+                <div class="card swiper-card">
+                <div class="image-content">
+                                    <div class="card-image">
+                                        <img src="{% static 'base/images/contributors/missing.svg' %}" alt="Mojisola Picture" class="card-img">
+                                        
+                                    </div>
+                                </div>
+            
+                                <div class="card-content">
+                                    <h4 class="name">Saminu Rukayat Mojisola</h4>
+                                    <p class="description">Product Designer</p>
+                                    <div class="icons">
+                                        <i class="uil uil-facebook-f"></i>
+                                        <i class="uil uil-twitter-alt"></i>
+                                        <i class="uil uil-linkedin-alt"></i>
+                                    </div>
+                                    
+                                </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <script src="{% static 'base/js/slider.js'%}"></script>
+
+{% endblock content %}
+
+{% block bottom_footer %}{% endblock bottom_footer %}

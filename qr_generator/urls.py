@@ -17,12 +17,14 @@ urlpatterns += [
 
 urlpatterns +=[
     path('contact-us/', views.contact_us, name='contact_us'),
-    path('learn-more/', views.learn_more, name="learn_more"), 
+    path('learn-more/', views.learn_more, name="learn_more"),
+    path('about-us', views.about_us, name='about_us'), 
 ]
 
 
 urlpatterns += [
     path('dashboard/active-qr', views.dashboard, name='active_qr',),
     path('dashboard/folders/', views.folders, name='folders'),
+
 ]
 

@@ -1,8 +1,5 @@
 # account/views.py
 import base64
-from enum import unique
-from pathlib import Path
-from pickletools import read_unicodestring1
 from smtplib import SMTPServerDisconnected
 from django.http import BadHeaderError, HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render
@@ -177,8 +174,6 @@ def folders(request):
     all_user_items = QRCollection.objects.filter(id__in=user_items)
 
     unique_categories = {str(_.category) for _ in all_user_items }
-
-
     context['folders'] = unique_categories
 
     return render(request, template, context)
@@ -192,6 +187,9 @@ def save_qr(request, id):
 def form(request, template):
     form = ContactUsForm()
     return render(request, "qr_generator/" + template +'.html', {"form":form})
+
+def about_us(request):
+    return render(request, 'base/about_us.html', )
 
 
 def contact_us(request):

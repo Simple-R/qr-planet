@@ -1,7 +1,7 @@
-var swiper = new Swiper(".slide-content", {
-    slidesPerView: 3,
+var swiper = new swiper(".slide-content", {
+    slidesPerView: 1,
     spaceBetween: 30,
-    slidesPerGroup: 3,
+    slidesPerGroup: 1,
     loop: true,
     loopFillGroupWithBlank: true,
     pagination: {
@@ -13,3 +13,6 @@ var swiper = new Swiper(".slide-content", {
       prevEl: ".swiper-button-prev",
     },
   });
+
+
+

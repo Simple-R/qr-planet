@@ -1,13 +1,10 @@
-from django.http import HttpResponseRedirect
+
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from accounts.decorators import unauthenticated_user
-from django.contrib.auth.forms import UserCreationForm
+
 from django.contrib.auth import login, logout, authenticate
-
-from .forms import CreateUserForm
-
 #===============================================================
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail, BadHeaderError
@@ -20,11 +17,9 @@ from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 
+from accounts.models import QRUser
 
-from django.contrib.auth import get_user_model
 
-
-User = get_user_model()
 
 
 def index(request):
@@ -46,11 +41,11 @@ def register(request):
 			messages.warning(request, "Passwords do not match!")
 			return redirect("accounts:register")
 
-		if User.objects.filter(email=email).exists():
+		if QRUser.objects.filter(email=email).exists():
 			messages.info(request, "An account with that email already exists")
 			return redirect("accounts:register")
 
-		user = User.objects.create_user(username=username, email=email, password=password)
+		user = QRUser.objects.create_user(username=username, email=email, password=password)
 		user.set_password(password)
 		messages.success(request, f'Account created for {username.title()}')
 
@@ -103,7 +98,7 @@ def password_reset_request(request):
 
 		if password_reset_form.is_valid():
 			email = password_reset_form.cleaned_data['email']
-			associated_users = User.objects.filter(Q(email=email))
+			associated_users = QRUser.objects.filter(Q(email=email))
 
 			if associated_users.exists():
 				for user in associated_users:
