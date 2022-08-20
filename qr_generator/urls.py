@@ -22,6 +22,7 @@ urlpatterns +=[
 
 
 urlpatterns += [
-    path('dashboard/active-qr', views.dashboard, name='active_qr',)
+    path('dashboard/active-qr', views.dashboard, name='active_qr',),
+    path('dashboard/folders/', views.folders, name='folders'),
 ]
 

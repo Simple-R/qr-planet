@@ -100,7 +100,7 @@
                   {% csrf_token %}
                   <input type="text" placeholder="Input URL/Link" name="url-link" required/>
                 </form>
-                <button type="submit" form="url-input">Generate QR Code</button>
+                <button type="submit" form="url-input">Generate QR</button>
               <!-- </section> -->
             </div>
 
@@ -110,7 +110,7 @@
               <form action="{% url 'qr_generator:generate_qr' %}" method="post" id="app-store">
                 {% csrf_token %}
                 <input type="url" placeholder="Enter Link to Application" name="text" required/>
-                <input type="submit">Generate QR Code</button>
+                <input type="submit">Generate QR</button>
               </form>
               
               
@@ -123,7 +123,7 @@
                 {% csrf_token %}
                 <textarea name="text" id="message" name="text"></textarea>
               </form>
-              <button type="submit" form="text-input">Generate QR Code</button>
+              <button type="submit" form="text-input">Generate QR</button>
               <!-- </section> -->
             </div>
        
@@ -134,7 +134,7 @@
                 {% csrf_token %}
               <input type="url" placeholder="Input your github url" name="text"/>
               </form>
-              <button type="submit" form="github-input">Generate QR Code</button>
+              <button type="submit" form="github-input">Generate QR</button>
               <!-- </section> -->
             </div>
             <div class="page" id="p6">

@@ -1,5 +1,6 @@
 # account/views.py
 import base64
+from enum import unique
 from pathlib import Path
 from pickletools import read_unicodestring1
 from smtplib import SMTPServerDisconnected
@@ -32,6 +33,7 @@ from django.http.response import HttpResponse
 from django.shortcuts import render
 
 User = get_user_model()
+
 
 @login_required(login_url="/qr-gen/accounts/login")
 def dashboard(request):
@@ -164,10 +166,22 @@ def generate_qr(request):
     
     return render(request, template, context)
 
+def folders(request):
+    template = 'qr_generator/dashboard/folders.html'
+    context = {}
 
-def category(request, pk):
-    if pk == "image":
-        return 'image'
+    # Get all the saved QR ID's
+    user_items = [item.qr_code for item in UserCollection.objects.filter(qr_user=request.user)]
+
+    # fetch them
+    all_user_items = QRCollection.objects.filter(id__in=user_items)
+
+    unique_categories = {str(_.category) for _ in all_user_items }
+
+
+    context['folders'] = unique_categories
+
+    return render(request, template, context)
 
 def save_qr(request, id):
     user = request.user

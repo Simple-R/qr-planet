@@ -1,0 +1,78 @@
+{% extends 'qr_generator/dashboard/dashboard.html' %}
+
+{% load static %}
+
+{% block style %}
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+    <link rel="stylesheet" href="{% static 'dashboard/css/folders.css'%}">
+{% endblock style %}
+
+ {% block title %}|&nbsp;{{request.user.username|title}}&nbsp;Folders{% endblock title %}
+   
+
+ {% block content %}
+    <section class="dashboard-content">
+        <div class="wrapper">
+            <div class="sidebar">
+            {% block sidebar %}
+            <ul>
+                <li>
+                <a href="#"><i class="uil uil-user-circle"></i>Profile</a>
+                </li>
+                <li>
+                <a href="{% url 'qr_generator:folders' %}" id="dash-active-page"><i class="uil uil-folder-download"></i>My Folders</a>
+                </li>
+                <li>
+                <a href="{% url 'qr_generator:active_qr' %}" ><i class="uil uil-cloud-check"></i>Active QR Codes</a>
+                </li>
+                <li >
+                <a href="#"><i class="uil uil-clock"></i>History</a>
+                </li>
+                <li>
+                <a href="#"><i class="uil uil-shield"></i>Change Password</a>
+                </li>
+                <li>
+                <a href="#"><i class="uil uil-question-circle"></i>Help</a>
+                </li>
+                <li>
+                <a href="#" class="delete">Delete Account</a>
+                </li>
+            </ul>
+            {% endblock sidebar %}
+            </div>
+
+
+            {% block specific_content %}
+                {% if folders %}
+                <div class="container">
+                    <div class="content">
+                        <ul style="float:right;">
+                            {% for folder in folders %}
+                                <li style="text-decoration:none;"><i class="uil uil-folder-download"></i>{{ folder }}</li>
+                            {% endfor %}
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                {% else %}
+                <div class="container">                    
+                    <img src="{% static 'dashboard/images/folders.png'%}" alt="Logo" />                    
+                    <div class="content">
+                        <p>You have nothing in your folder yet</p>
+                    </div>
+                </div>
+                {% endif %}
+            {% endblock specific_content%}
+        </div>
+    </section>
+
+
+
+{% block extra_script %}
+{% endblock extra_script %}
+
+{% endblock content %}
