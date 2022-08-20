@@ -100,7 +100,7 @@
                   {% csrf_token %}
                   <input type="url" placeholder="Input URL/Link" name="url-link" required/>
                 </form>
-                <button type="submit" form="url-input">Generate QR Code</button>
+                <button type="submit" form="url-input">Generate QR</button>
               <!-- </section> -->
             </div>
 
@@ -111,7 +111,7 @@
                 {% csrf_token %}
                 <input type="url" placeholder="Enter Link to Application" name="text" required/>
               </form>
-              <button type="submit" form="app-store">Generate QR Code</button>
+              <button type="submit" form="app-store">Generate QR</button>
                 
 
               <!-- </section> -->
@@ -123,7 +123,7 @@
                 {% csrf_token %}
                 <textarea name="text" id="message"></textarea>
               </form>
-              <button type="submit" form="text-input">Generate QR Code</button>
+              <button type="submit" form="text-input">Generate QR</button>
               <!-- </section> -->
             </div>
        
