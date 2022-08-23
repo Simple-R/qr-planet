@@ -1,10 +1,3 @@
-from django.views.static import serve
-from django.contrib import admin
-from django.urls import path
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
 # qr_gen_project/settings.py
 
 from django.contrib import admin
@@ -19,6 +12,10 @@ from drf_yasg import openapi
 
 
 from django.contrib.auth import views as auth_views
+from django.views.static import serve
+from django.contrib import admin
+from django.urls import path
+
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -41,6 +38,7 @@ urlpatterns = [
    path('qr-gen/api/redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
    path('qr-gen/api/', include('api.urls'), ),
 ]
+
 
 urlpatterns += [
     path('', include('qr_generator.urls', namespace='qr_generator'),),
