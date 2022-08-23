@@ -1,6 +1,7 @@
 # account/views.py
 import base64
 from smtplib import SMTPServerDisconnected
+from wsgiref.simple_server import WSGIRequestHandler
 from django.http import BadHeaderError, HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.conf import settings
@@ -13,7 +14,6 @@ from PIL import Image
 from django.conf import settings
 from qr_gen_project.settings import  MEDIA_ROOT
 from django.contrib.auth.decorators import login_required
-
 from django.contrib.auth import get_user_model
 
 # --------------------imports
@@ -61,7 +61,6 @@ def index(request):
 
 def share_qr(request, pk):
     return render(request, 'qr_generator/share_qr.html', {'qr_image':pk})
-
 
 # =========== CONVERT QR FORMATS ================
 
@@ -115,52 +114,57 @@ def convert_to_pdf(path):
 # =========== ENDCONVERT QR FORMATS ================
 
 
+def qr_creator(request:WSGIRequestHandler, user: User, categ_: str) -> QRCollection:
+    """This is the Main QR Creator Function:
+        It creates the QR code and returns the created QR object
+    """
+
+    QRCollection.objects.create(
+            qr_user = user,
+            category = categ_.upper(),
+            qr_info = 'Your {0} is: {1}.'.format(categ_.title(), request.POST[categ_])
+            )
+
+    created_qr_object = QRCollection.objects.filter(qr_user=user).order_by('-id')[0]
+
+    return created_qr_object
+
+
 @login_required(login_url="/qr-gen/accounts/login")
 def generate_qr(request):
+    """The Generte QR function accepts a WSGIRequest, if it's a POST request,
+    it checks the name in the submitted form and uses the qr_creator function to process it """
+    
     context = {}
     template = 'qr_generator/generateqr.html'
     
     if request.method == 'POST':
-
+        
         # if text is selected        
         if 'text' in request.POST:
-            QRCollection.objects.create(
-                qr_user = request.user,
-                category = 'TEXT',
-                qr_info = 'Your Text is: ' + request.POST['text'],
-                )
-
-            context['qr_image'] = QRCollection.objects.filter(qr_user=request.user).order_by('-id')[0]
-            return render(request, 'qr_generator/common/url_qr.html', context)
+            context['qr_object'] = qr_creator(request.POST, request.user, 'text')
+            return render(request, template, context)
 
         # if Url is selected
-        elif 'url-link' in request.POST:
-            QRCollection.objects.create(
-                qr_user = request.user,
-                category = 'URL',
-                qr_info = 'Your Link is: ' + request.POST['url-link'],
-                )
+        elif 'url' in request.POST:
+            context['qr_object'] = qr_creator(request, request.user, 'url')
+            return render(request, template, context)
 
-            
-            context['qr_image'] = QRCollection.objects.filter(qr_user=request.user).order_by('-id')[0]
-            return render(request, 'qr_generator/common/url_qr.html', context)
+        # if github  is selected
+        elif 'github' in request.POST:
+            context['qr_object'] = qr_creator(request, request.user, 'github')
+            return render(request, template, context)
 
+        # if zoom  is selected
+        elif 'zoom' in request.POST:
+            context['qr_object'] = qr_creator(request, request.user, 'zoom')
+            return render(request, template, context)
 
         # if App-store is selected
         elif 'app-store' in request.POST:
-            QRCollection.objects.create(
-                qr_user = request.user,
-                category = 'URL',
-                qr_info = 'Your App-store Link is: ' + request.POST['app'],
-                )
+            context['qr_object'] = qr_creator(request, request.user, 'app-store')
+            return render(request, template, context)
 
-            ls = QRCollection.objects.all().order_by('-id')[0]
-            context = {'qr_image':ls}
-
-            return render(request, 'qr_generator/common/url_qr.html', context)
-
-        
-    
     return render(request, template, context)
 
 def folders(request):

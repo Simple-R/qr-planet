@@ -47,7 +47,7 @@ class UsersManager(UserManager):
 
 
 class QRUser(AbstractBaseUser, PermissionsMixin):
-    """We are Using Email as our ID"""
+    """An extension of the ABstractBaseUser that uses the email as the Primary Key"""
     username_validator = UnicodeUsernameValidator()
 
     username = models.CharField(

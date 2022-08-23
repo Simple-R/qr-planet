@@ -98,7 +98,7 @@
                 <p class="title">Enter URL or Link</p>
                 <form action="{% url 'qr_generator:generate_qr' %}" method="post" id="url-input">
                   {% csrf_token %}
-                  <input type="text" placeholder="Input URL/Link" name="url-link" required/>
+                  <input type="text" placeholder="Input URL/Link" name="url" required/>
                 </form>
                 <button type="submit" form="url-input">Generate QR</button>
               <!-- </section> -->
@@ -109,7 +109,7 @@
               <p class="title">Enter URL or Link</p>
               <form action="{% url 'qr_generator:generate_qr' %}" method="post" id="app-store">
                 {% csrf_token %}
-                <input type="url" placeholder="Enter Link to Application" name="text" required/>
+                <input type="url" placeholder="Enter Link to Application" name="url" required/>
                 <input type="submit">Generate QR</button>
               </form>
               
@@ -128,11 +128,10 @@
             </div>
        
             <div class="page" id="p5">
-              <!-- <section id="store"> -->
               <p class="title">Github</p>
               <form action="{% url 'qr_generator:generate_qr' %}" method="post" id="github-input">
                 {% csrf_token %}
-              <input type="url" placeholder="Input your github url" name="text"/>
+              <input type="url" placeholder="Input your github url" name="github"/>
               </form>
               <button type="submit" form="github-input">Generate QR</button>
               <!-- </section> -->
@@ -142,11 +141,11 @@
               <p class="title">Zoom Link</p>
               <form action="{% url 'qr_generator:generate_qr' %}" method="post" id="zoom-input">
                 {% csrf_token %}
-                <input type="url" placeholder="Enter Zoom Link" name="text"/>
+                <input type="url" placeholder="Enter Zoom Link" name="zoom"/>
                 </form>
                 <button type="submit" form="zoom-input">Generate QR</button>
-              <!-- </section> -->
             </div>
+            
             <div class="page" id="p7">
               <!-- <section id="store"> -->
               <p class="title">Bank Details</p>
@@ -194,17 +193,13 @@
         <div class="box2">
 
           
-          {% if qr_image %}
+          {% if qr_object %}
           <div class="qrimage">
-            <img src="{{ qr_image.qr_code.url }}" name=img value="{{ qr_image.qr_code.url }}" alt="qr code image" />
+            <img src="{{ qr_object.qr_code.url }}" name=img value="{{ qr_object.qr_code.url }}" alt="qr code image" />
           </div>
 
-          <form style="display:none;" action="{% url 'qr_generator:save_qr' %}" method="post" id="save_btn">
-            {% csrf_token %}
-            <input type="url" name="qr" value="{{qr_image}}"/>
-          </form>
-          <button type="submit" class="btn2" form="save_btn"><i class="uil uil-import"></i>Save</button>
-          <button class="btn2"><i class="uil uil-share-alt"></i><a href="{% url 'qr_generator:share' '{{ qr_image }}' %}">Share</a></button>      
+          <button type="submit" class="btn2" form="save_btn"><i class="uil uil-import"></i><a href={% url 'qr_generator:save_qr' id=qr_object.id %}>Save</a></button>
+          <button class="btn2"><i class="uil uil-share-alt"></i><a href="{% url 'qr_generator:share' '{{ qr_object }}' %}">Share</a></button>      
             <select  class="btn2" id=downLoad_option name="download_option">
               <option value="">--select format--</option>
               <option value="pdf">PDF</option>
@@ -231,6 +226,7 @@
     </div>
     
     {% block extra_script %}
+    <script src="{% static 'qr_generator/js/custom/generateqr.js' %}"></script>
     {% endblock extra_script %}
 
     {% endblock content %}
